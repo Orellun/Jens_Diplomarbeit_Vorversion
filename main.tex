@@ -1,5 +1,5 @@
 % Header mit Deklarationen
-\input{extras/header}
+\input{Sonderseiten/header.tex}
 % Literaturverzeichnis
 \bibliography{literatur/bib}
 
@@ -9,20 +9,20 @@
 \pagenumbering{Roman}
 
 % Titelblatt
-\input{extras/Titelseite2}
+\input{Sonderseiten/Titelseite_2.tex}
 
 \cleardoublepage\thispagestyle{empty}
 
-\input{extras/Eigenstaendigkeitserklauerung}
+\input{Sonderseiten/Eigenstaendigkeitserklauerung}
 
 
 \cleardoublepage
 
-\input{extras/Sperrvermerk}
+% \input{Sonderseiten/Sperrvermerk}
 
 \clearpage
 
-\input{extras/Zusammenfassung}
+\input{Sonderseiten/Zusammenfassung}
 
 \clearpage
 
@@ -30,7 +30,7 @@
 % Kopfzeile links Kapitel, rechts leer
 %\ihead{\leftmark}
 %\ohead{}
-%\input{extras/verzeichnisse}
+%\input{Sonderseiten/verzeichnisse}
 
 %
 % Inhaltsverzeichnis
@@ -38,13 +38,13 @@
 \tableofcontents \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}%\pdfbookmark[0]{Inhaltsverzeichnis}{sumario_label_pdf}
 
 
-\input{extras/nomenklatur}
+\input{Sonderseiten/nomenklatur}
 
 
 %
 % Abkürzungsverzeichnis
 %
-\input{extras/abkuerzungen}
+\input{Sonderseiten/abkuerzungen}
 \printglossary[title={Abkürzungsverzeichnis},toctitle={Abkürzungsverzeichnis},type=\acronymtype,style=long]
 
 
@@ -128,11 +128,11 @@
 %\begin{comment}
 % Appendix, falls vorhanden
 \appendix
-%\input{extras/anhang}
+%\input{Sonderseiten/anhang}
 %\end{comment}
 
 
 % Eidesstattliche Erklärung
-%\input{extras/eidesstattliche}
+%\input{Sonderseiten/eidesstattliche}
 
 \end{document}
