@@ -1,0 +1,105 @@
+
+
+
+
+
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+        group style={
+            group size=1 by 5,
+            xlabels at=edge bottom,
+            ylabels at=edge left,
+            xticklabels at=edge bottom,
+            vertical sep=3pt,
+            % vertical sep=40pt
+        },
+ 	width=\textwidth,
+ 	xmin=0,
+ 	xmax=0.515,
+ 	xtick={0,0.1,...,1.2},
+ 	xlabel={Zeit in $s$},
+ 	yticklabel style = {font=\small,xshift=0.25ex},
+ 	,
+ 	ylabel style = {font=\small,xshift=0.25ex},
+    ]
+    
+\nextgroupplot [
+ 	no markers,
+ 	ymin=0,
+    %ymax=5,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Position in \si{\milli\meter}},
+    grid=major,
+    ytick={0,15,...,120},
+    height=0.23\textheight,
+]
+    
+ 	\addplot table[x=Zeit, y=Position]  {graphen/CSV_Daten/Polynom5_Ordnung_1-10788-38163-M-12.06.2015_P10.txt};
+ 	\node[anchor=center] at (axis cs:0.48,105) {A};
+    
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=0,
+    %ymax=130,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Geschwindigkeit in \si{\per\second}},
+    grid=major,
+    ytick={-75,-50,...,75},
+    height=0.23\textheight,
+]
+ 	\addplot table[x=Zeit, y=Geschwindigkeit]  {graphen/CSV_Daten/Polynom5_Ordnung_1-10788-38163-M-12.06.2015_P10.txt};
+ 	\node[anchor=center] at (axis cs:0.48,60) {B};
+
+
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=0,
+    %ymax=130,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Drehmoment in \si{\newton\meter}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.23\textheight,
+]
+ 	\addplot table[x=Zeit, y=Drehmoment]  {graphen/CSV_Daten/Polynom5_Ordnung_1-10788-38163-M-12.06.2015_P10.txt};
+ 	\node[anchor=center] at (axis cs:0.48,20) {C};
+
+\nextgroupplot [
+ 	no markers,
+ 	ymin=-0.05,
+    ymax=0.05,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Schleppfehler in \si{\milli\meter}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.23\textheight,
+    scaled y ticks = false,
+    tick label style={/pgf/number format/fixed},
+]
+ 	\addplot table[x=Zeit, y=Schleppfehler]  {graphen/CSV_Daten/Polynom5_Ordnung_1-10788-38163-M-12.06.2015_P10.txt};
+ 	\node[anchor=center] at (axis cs:0.48,0.025) {D};
+ 	
+ 	
+\nextgroupplot [,
+ 	no markers,
+ 	ymin=-0.1,
+    ymax=0.1,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Positionsdifferenz in \si{\milli\meter}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.23\textheight,
+    scaled y ticks = false,
+    tick label style={/pgf/number format/fixed},
+]
+ 	\addplot table[x=Zeit, y=Positionsdifferenz]  {graphen/CSV_Daten/Polynom5_Ordnung_1-10788-38163-M-12.06.2015_P10.txt};
+ 	\node[anchor=center] at (axis cs:0.48,0.075) {E};
+
+\end{groupplot}
+
+%\draw (my plots c1r1.east) circle (3pt) node {East};
+
+
+\end{tikzpicture}

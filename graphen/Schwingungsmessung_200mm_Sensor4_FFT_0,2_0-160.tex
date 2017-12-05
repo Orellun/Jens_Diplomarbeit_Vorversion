@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+ \begin{axis}[
+ 	no markers,
+ 	ymin=0,
+    xmin=0,
+    xmax=162,
+ 	width=\textwidth,height=0.3\textheight,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    xlabel={Frequenz in \si{\hertz}},
+    ylabel={Beschleunigung in mg},
+    grid=major,
+    %legend entries={Temperatursensor 1,Temperatursensor 2,Temperatursensor 3},
+    %legend pos=south east,
+    %enlarge x limits=0.01,
+]
+ 	\addplot table[x=Zeit, y=mg]  {graphen/CSV_Daten/Schwingungsmessung_200mm_Sensor4_FFT_0,2_0-160.txt};
+ \end{axis}
+\end{tikzpicture}

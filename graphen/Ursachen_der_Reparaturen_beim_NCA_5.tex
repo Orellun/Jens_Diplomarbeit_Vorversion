@@ -1,0 +1,33 @@
+
+\begin{tikzpicture} 
+ \begin{axis}[ 
+  width=0.8\textwidth,height=0.3\textheight,
+  ybar,
+  ymin=0,
+  ymax=7,
+  bar width=20pt,
+  legend style={at={(0.5,-0.2)}, 
+   anchor=north,legend columns=-1}, 
+   ymajorgrids=true,
+  ylabel={Anteil in Prozent},
+  yticklabel={\pgfmathparse{\tick*100/24}\pgfmathprintnumber{\pgfmathresult}},
+  ytick={0,1.2,2.4,3.6,4.8,6},
+  symbolic x coords={allg. Fehler AMO-Messsystem,Pinole in Gehäuse gefressen,Kühlkreislauf zugesetzt,Defekt am Motor (Fehler b. Lieferanten),axiales Spiel,Montagefehler Spannsatz,Gleitstein beschädigt (auf Block gefahren)}, 
+  xtick=data, 
+  nodes near coords, 
+    nodes near coords align={vertical}, 
+  x tick label style={font=\small,rotate=30,anchor=east}, 
+    ] 
+  \addplot 
+    [fill=Bihler1]
+        coordinates {
+        (allg. Fehler AMO-Messsystem,6) 
+        (Pinole in Gehäuse gefressen,5) 
+        (Kühlkreislauf zugesetzt,5) 
+        (Defekt am Motor (Fehler b. Lieferanten),3) 
+        (axiales Spiel,2)
+        (Montagefehler Spannsatz,2)
+        (Gleitstein beschädigt (auf Block gefahren),1)
+  }; 
+ \end{axis} 
+\end{tikzpicture}

@@ -1,0 +1,24 @@
+
+
+
+\begin{tikzpicture}
+ \begin{axis}[
+ 	no markers,
+ 	ymin=0,
+ 	%ymax=60,
+    xmin=0,
+    xmax=10364,
+ 	width=\textwidth,height=0.3\textheight,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    xlabel={Frequenz in \si{\kilo\hertz}},
+    ylabel={Beschleunigung in mg},
+    grid=major,
+    %legend entries={Temperatursensor 1,Temperatursensor 2,Temperatursensor 3},
+    %legend pos=south east,
+    %enlarge x limits=0.01,
+    xticklabel={\pgfmathparse{\tick/1000}\pgfmathprintnumber{\pgfmathresult}},
+    scaled x ticks = false
+]
+ 	\addplot table[x=Frequenz, y=mg]  {graphen/CSV_Daten/Schwingungssensor_200mm_Sensor1_FFT_12_0-10000.txt};
+ \end{axis}
+\end{tikzpicture}

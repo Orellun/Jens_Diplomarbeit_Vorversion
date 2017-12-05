@@ -1,0 +1,62 @@
+
+
+\begin{tikzpicture}
+\begin{groupplot}[
+        group style={
+            group size=1 by 2,
+            xlabels at=edge bottom,
+            ylabels at=edge left,
+            xticklabels at=edge bottom,
+            vertical sep=3pt,
+            % vertical sep=40pt
+        },
+ 	width=0.9\textwidth,
+ 	xmin=0,
+ 	xmax=0.515,
+ 	xtick={0,0.1,...,1.2},
+ 	xlabel={Zeit in \si{\second}},
+ 	yticklabel style = {font=\small,xshift=0.25ex},
+ 	,
+ 	ylabel style = {font=\small,xshift=0.25ex},
+    ]
+    
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=-0.05,
+    %ymax=0.05,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Schleppfehler in \si{\milli\meter}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.3\textheight,
+    scaled y ticks = false,
+    tick label style={/pgf/number format/fixed},
+]
+    \addplot table[x=Zeit, y=MittelwertLagError]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+ 	\addplot table[x=Zeit, y=Schleppfehler]  {graphen/CSV_Daten/Polynom5_Ordnung_zu_viel_axiales_Spiel_1-10788-38173-M-16.06.2015_P10.txt};
+ 	
+    \addplot[lightgray] table[x=Zeit, y=minus3sigmaMittelwertLagError]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+    \addplot[lightgray] table[x=Zeit, y=plus3sigmaMittelwertLagError]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+ 	\node[anchor=center] at (axis cs:0.48,0.045) {A};
+ 	
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=-0.1,
+    %ymax=0.1,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Positionsdifferenz in \si{\milli\meter}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.3\textheight,
+    scaled y ticks = false,
+    tick label style={/pgf/number format/fixed},
+    legend entries={Mittelwert aller Achsen, zu viel Spiel Sn.: 38173, $\pm 3 \sigma $ Standardabweichung},
+]
+ 	\addplot table[x=Zeit, y=MittelwertPositionsDifference]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+ 	\addplot table[x=Zeit, y=Positionsdifferenz]  {graphen/CSV_Daten/Polynom5_Ordnung_zu_viel_axiales_Spiel_1-10788-38173-M-16.06.2015_P10.txt}; 	
+ 	\addplot[lightgray] table[x=Zeit, y=minus3sigmaPositionsDifference]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+    \addplot[lightgray] table[x=Zeit, y=plus3sigmaPositionsDifference]  {graphen/CSV_Daten/zusammengefasst_Polynom5_Ordnung.txt};
+ 	\node[anchor=center] at (axis cs:0.48,0.04) {B};
+
+\end{groupplot}
+\end{tikzpicture}

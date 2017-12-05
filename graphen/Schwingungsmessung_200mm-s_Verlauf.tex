@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+\begin{groupplot}[
+        group style={
+            group size=1 by 2,
+            xlabels at=edge bottom,
+            ylabels at=edge left,
+            xticklabels at=edge bottom,
+            vertical sep=3pt,
+            % vertical sep=40pt
+        },
+ 	width=\textwidth,
+ 	xmin=0,
+ 	xmax=1.06,
+ 	%xtick={0,60,...,360},
+ 	xlabel={Zeit in $s$},
+ 	yticklabel style = {font=\small,xshift=0.25ex},
+ 	ylabel style = {font=\small,xshift=0.25ex},
+    ]
+    
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=-5,
+    %ymax=5,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Soll-Position in mm},
+    grid=major,
+    %ytick={-5,-4,...,5},
+    height=0.25\textheight,
+]
+ 	\addplot table[x=Zeit, y=Set_position]  {graphen/CSV_Daten/Schwingungsmessung_200mm-s_Verlauf.txt};    
+    
+\nextgroupplot [
+ 	no markers,
+ 	%ymin=0,
+    %ymax=130,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Soll-Geschwindigkeit in \si{\milli\meter\per\second}},
+    grid=major,
+    %ytick={0,20,...,120},
+    height=0.25\textheight,
+]
+ 	\addplot table[x=Zeit, y=Set_speed]  {graphen/CSV_Daten/Schwingungsmessung_200mm-s_Verlauf.txt};
+
+
+
+
+\end{groupplot}
+\end{tikzpicture}

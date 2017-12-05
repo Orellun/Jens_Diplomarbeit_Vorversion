@@ -1,0 +1,30 @@
+
+\begin{tikzpicture} 
+ \begin{axis}[ 
+  width=\textwidth,
+  height=0.2\textheight,
+  ybar,
+  ymin=0,
+  ymax=3,
+  bar width=70pt,
+  legend style={at={(0.5,-0.2)}, 
+   anchor=north,legend columns=-1}, 
+   ymajorgrids=true,
+  ylabel={Anteil in Prozent},
+  ytick={0,0.75,1.5,2.25,3},
+  yticklabel={\pgfmathparse{\tick*100/3}\pgfmathprintnumber{\pgfmathresult}},
+  symbolic x coords={Schmieröl im Motorgeber,allg. Fehler beim Motorgeber (Fehler b. Lieferanten)}, 
+  xtick=data, 
+  nodes near coords, 
+    nodes near coords align={vertical}, 
+  x tick label style={font=\small,anchor=north,text width=4cm,align=center},
+  enlarge x limits=.7,
+    ] 
+  \addplot 
+    [fill=Bihler1]
+        coordinates {
+        (Schmieröl im Motorgeber,2) 
+        (allg. Fehler beim Motorgeber (Fehler b. Lieferanten),1) 
+  }; 
+ \end{axis} 
+\end{tikzpicture}

@@ -1,0 +1,33 @@
+
+
+
+\begin{tikzpicture} 
+ \begin{axis}[ 
+  width=\textwidth,height=0.3\textheight,
+  ybar,
+  ymin=0,
+  ymax=33,
+  bar width=45pt,
+  legend style={at={(0.5,-0.2)}, 
+   anchor=north,legend columns=-1}, 
+   ymajorgrids=true,
+  ylabel={Anteil in Prozent},
+  ytick={0,8.25,16.5,24.75,33},
+  yticklabel={\pgfmathparse{\tick*100/33}\pgfmathprintnumber{\pgfmathresult}},
+  symbolic x coords={NCA 5,NCA 4,NCA 3,NCA 2}, 
+  xtick=data, 
+  nodes near coords, 
+    nodes near coords align={vertical}, 
+  x tick label style={font=\small,anchor=north,text width=3cm,align=center}, 
+   enlarge x limits=.3,
+    ]
+  \addplot 
+    [fill=Bihler1]
+        coordinates {
+        (NCA 5,24)
+        (NCA 4,3)
+        (NCA 3,2)
+        (NCA 2,4)
+  }; 
+ \end{axis} 
+\end{tikzpicture}

@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+ \begin{axis}[
+ 	no markers,
+ 	%ymin=0,
+    %xmin=0,
+ 	width=0.9\textwidth,height=0.4\textheight,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    xlabel={Zeit in min},
+    ylabel={Temperatur in $^\circ$C},
+    grid=major,
+    legend entries={Temperatursensor 1,Temperatursensor 2,Temperatursensor 3},
+    legend pos=south east,
+    %enlarge x limits=0.01,
+]
+ 	\addplot table[x=Punkte:, y=Temperatursensor1]  {graphen/CSV_Daten/Trendanzeige_Temperatur_Aggregat38207.txt};
+ 	\addplot table[x=Punkte:, y=Temperatursensor2]  {graphen/CSV_Daten/Trendanzeige_Temperatur_Aggregat38207.txt};
+ 	\addplot table[x=Punkte:, y=Temperatursensor3]  {graphen/CSV_Daten/Trendanzeige_Temperatur_Aggregat38207.txt};
+ \end{axis}
+\end{tikzpicture}
+
+% StromLauf1

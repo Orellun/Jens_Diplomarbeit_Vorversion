@@ -1,0 +1,27 @@
+
+
+\begin{tikzpicture}
+ \begin{axis}[
+ 	no markers,
+ 	%ymin=0,
+    xmin=0,
+ 	width=0.9\textwidth,height=0.4\textheight,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    xlabel={Zeit},
+    ylabel={Geschwindigkeit},
+    grid=major,
+    %legend entries={Zyklus 1},
+    enlarge x limits=0.01,
+]
+ 	\addplot table[x=Zeit, y=1te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=2te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=3te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=4te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=5te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=6te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=7te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=8te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=9te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ 	\addplot table[x=Zeit, y=10te]  {graphen/CSV_Daten/Wiederholungsmessung_axiales_Spiel_38094_Drehmoment.txt};
+ \end{axis}
+\end{tikzpicture}

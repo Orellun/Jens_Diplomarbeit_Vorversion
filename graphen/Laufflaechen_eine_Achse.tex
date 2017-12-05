@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+\begin{groupplot}[
+        group style={
+            group size=1 by 2,
+            xlabels at=edge bottom,
+            ylabels at=edge left,
+            xticklabels at=edge bottom,
+            vertical sep=3pt,
+            % vertical sep=40pt
+        },
+ 	width=\textwidth,
+ 	xmin=0,
+ 	xmax=3.75,
+ 	%xtick={0,60,...,360},
+ 	xlabel={Zeit in \si{\second}},
+    ]
+    
+    
+    
+\nextgroupplot [
+ 	no markers,
+ 	ymin=0,
+    ymax=130,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Position in \si{\milli\meter}},
+    grid=major,
+    ytick={0,20,...,120},
+    height=0.25\textheight,
+]
+ 	\addplot table[x=Zeit, y=Istpositionmm]  {graphen/CSV_Daten/Laufflaechenpruefung_1ne_Achse.txt};
+
+
+
+\nextgroupplot [
+ 	no markers,
+ 	ymin=-5,
+    ymax=5,
+  	%title=Einfahrzyklus Drehmomentprofil,
+    ylabel={Stromstärke in \si{\ampere}},
+    grid=major,
+    ytick={-5,-4,...,4},
+    height=0.35\textheight,
+]
+ 	\addplot table[x=Zeit, y=StromstaerkeA]  {graphen/CSV_Daten/Laufflaechenpruefung_1ne_Achse.txt};
+\end{groupplot}
+\end{tikzpicture}
+

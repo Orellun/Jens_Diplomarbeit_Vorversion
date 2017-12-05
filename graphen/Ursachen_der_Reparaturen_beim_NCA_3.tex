@@ -1,0 +1,30 @@
+
+\begin{tikzpicture} 
+ \begin{axis}[ 
+  width=\textwidth,
+  height=0.15\textheight,
+  ybar,
+  ymin=0,
+  ymax=2,
+  bar width=70pt,
+  legend style={at={(0.5,-0.2)}, 
+   anchor=north,legend columns=-1}, 
+   ymajorgrids=true,
+  ylabel={Anteil in Prozent},
+  yticklabel={\pgfmathparse{\tick*100/2}\pgfmathprintnumber{\pgfmathresult}},
+  ytick={0,1,2,3,4},
+  symbolic x coords={Motor: durchgebrannt (Überlast),Motor: Kühlsystem undicht}, 
+  xtick=data, 
+  nodes near coords, 
+    nodes near coords align={vertical}, 
+  x tick label style={font=\small,anchor=north,text width=3cm,align=center},
+  enlarge x limits=.7,
+    ] 
+  \addplot 
+    [fill=Bihler1]
+        coordinates {
+        (Motor: durchgebrannt (Überlast),1) 
+        (Motor: Kühlsystem undicht,1) 
+  }; 
+ \end{axis} 
+\end{tikzpicture}
