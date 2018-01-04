@@ -33,6 +33,9 @@ Die gesteigerte Bildfrequzenz und Auflösung des neusten Kamerasystems ermöglic
 
 Die Aufgaben der elektronik lassen sich in den Bereich der Energieverwaltrung und Verlteilung  und den Den Bereicht der Signalverteilung separieren.
 
+Alle Subsystem sollen so gut wie möglich gegen beschädigung durch Überlastung oder FEhlerhafter bedinung geschützt werden.
+Wenn möglich soll ein Kontrolierter Ausfall der Komponenten in bekannten Zstände realisiert werden.
+
 Aus vorhergegangenen Test wurde das Flugsystem für eine Reine Batterielektrische Versorgung Konuzeptioniert.
 Der Antrieb durch einen Verbrennungsmotor wurde für die Vorliegende Flugzeuggröße trotz besserem Energiegewicht als unzureichend zuverlässig, aufwendig handhabbar, sowie zu teuer eingestuft.
 Des weiteren schränken bestehende Lärmschutzrichtlienien den Einsatzt auf Testflugplätzen ein und es wird davon ausgeganen das sich die unvermeidbaren Virbrationen negativ auf die zuverlässigkeit der Sensoren Auswirkt.
@@ -41,16 +44,82 @@ Des weiteren schränken bestehende Lärmschutzrichtlienien den Einsatzt auf Test
 
 Die Elektrische Energie aus dem Akkusystem wird primär für die Erzeugung des Vortriebs über den Antriebstrang Motorregleer, Büstenloser Motor, GEtriebe, Luftschraube verwendet.
 In diesem Pfand soll die Verwendung Mehrerer Quellen (akkupacks) bei sicherer handhabung ermöglicht werden.
-Zweitgrößter Energieverbrauchen sind die Aktorsysteme des Flugzeugs ("Servos") für alle Steuerflächen sowie Kamera Gimbal und Auswurfsysteme (Ei, Wasserflasche) verwendet welche mit einer Festen Spannung versorgt werden müssen.
-Dritgrößter Verbraucher an Bord sind die Funksysteme im 5 Ghz und 433 Mhz Band welche ebenfalls einer Festspannungsversorung bedürfen.
-Ebenfalls berücksichtigt werden sollen Verbraucher des Sensorsystems, wie Kamera und Bordcomputer mit einer Festen Spannung hoher Qualität.
-Als kleinster Verbraucher bedarf der Autopilatoen Computer und seine Sensorsysteme eine Versorgung Hoher Genauigkeit sowie mit geriger Varianz.
+Zweitgrößter Energieverbrauchen sind die Aktorsysteme des Flugzeugs ("Servos") für alle Steuerflächen sowie Kamera Gimbal und Auswurfsysteme (Ei, Wasserflasche) verwendet welche mit einer Festen Spannung von 5,0 Volt versorgt werden müssen.
+Dritgrößter Verbraucher an Bord sind die Funksysteme im 5 Ghz und 433 Mhz Band welche einer Festspannungsversorung mit 12 V  bedürfen.
+Ebenfalls berücksichtigt werden sollen Verbraucher des Sensorsystems, wie Kamera und Bordcomputer mit einer Festen Spannung von 5,0 V hoher Qualität.
+Als kleinster Verbraucher bedarf der Autopilatoen Computer und seine Sensorsysteme eine Versorgung Hoher Genauigkeit sowie mit geriger Varianz mit 3,3 V.
 
 Insgesamt sollen alle subsysteme im Fehlerfall einen Reibungslosen weiterbetrieb der Restklichen Systemteilnehmer gewährleisten. Insbesondere der Aufrechterhaltung der Funktion des Autopilotensystems wird Priorität eingeräumt.
 
 
 \subsection{Signalvertreilung}
 
+Neben dem Pfad für die Energieverteilung bedürfen eine vielzahl Logischer Signale der Verbindung und Verzweigung, sowie ausreichendem Schutz vor Fehlbedinung.
+
+Primär erfolgt der Informationstransport über Digitale Bussysteme. Es kommen der I2C Bus, der SPI Bus, sowie serielle Verbindungen zum Einsatz.
+
+I2C  Bus basierten Sensorsignalen gehören systemen wie der Laser Höhenmesser LIDAR, Geschwindigkeitsmessung über Schtaudrucksonde sowie GPS zur Posiitonsbestimmung in richtung der Eingänge des Autopilotensystems.
+
+Die Kommunikation mit dem Funkübertragungssystem des Autopiloten erfolgt über einen Seriellen Bus.
+
+Es besteht eine Verbindung vom Fernsteuerungsfunkempfängers und seines Sateliten mit dem Autpioloten.
+
+Bisher basieren alle vom Autopiloten Ausgegeben Steuersignale auf dem Prinzip der Pulsweitenmodulation "PWM"
+
+Diese steuern den Motorkontroller, die Sonderfunktionen wie den Abwurfmechanismus sowie die Aktorsysteme desflugzeugs .
 
 
-\section{Anforderung an die Elektronik}
+Die Eingänge des Autopiloten bedürfen eines Überspannungssutzsystems für 3,3 V Logikspannung.
+
+Die Ausgänge des Autopilotencomputers werrden nicht speziell geschützt. Hier wird die Versorung der Ausgänge des Autopiloten mit 5,0V bewerkstelligt. Diese liegt damit unter der  Maximalen Eingangsspannung der verwendeten Aktorsysteme.
+
+
+\section{Umsetzung in der Elektronik}
+
+\subsection{Kabel und Steckersystem}
+
+In erster Hardwareebene  wird der Schutz vor beschädigung und FEhlbedienung der Elktsichen Komponenten durch Konservativ dimensionierten Einsatz von Kabeln und Steckersystemen erziehlt. DIe Kabelquerschnitte sind um
+\begin{comment} Prozentzahl ?\end{comment}
+überdimensioniert. Bei den Steckerverbindungen wird nach möglichkeit eine Einmalige Polanzahl des Verbindders Gewählt.
+Die Stecker besitzwen bei Empfindlichen Signalkabeln eine Mechanische arretierung durch Virbationssicheren Formschluss in Form von Bügeln bezwihungsweise Haken.
+Um den Verschleiß der Kraftschluss basierten Signalstecker im Autopiloten zu vermeiden werden alle signale auf die Platine Adaptiert und von dort mit Formschluss basierten steckern weiter  Angschlossen.
+
+DIe Leistungsverbinder im hauptenergiepfad des Motors und der der Akkumulatoren sind Kraftschlussbasiert um eine Kompromiss aus Baugröße, Handhabung und Bertriebssicherheit zu erziehlen.
+
+\subsection{Trennung von Signal und Leistungsplatine}
+
+Die  Hochleistungskomponenten im Pfad von den Batterien zum antriebsstrtang werden auf einer Räumlich von dem Autopiloten und den Signalpfaden getrennten Platine realisiert. Dies bringt eine Reihe von Vorteilen für das system und die entwicklung mit sich.
+
+Es ist eine Bessere einzelne Austauschbarkeit für weiterentwicklung und Reparatur zu möglich.
+Die Schadenshäufigkeit und derren folgen sind auf der Leistungsplatine größer und graviernder was einen häufigeren 
+austausch und weiterentwicklung zur Fehlerkorretur nötig macht.
+
+Der Einsatz verschiedener Fertigungstechniken auf der Leistungs und der Autopilotenplatine wird vereinfacht.
+
+Die räumliche Trennung verringert den Einfluss durch die Hohen Wechselnden Ströme verursachten Elektrischen Felder auf das Empfindliche Autopilotensystem und seine Ein und Ausgangssignale.
+
+Sonstige Signalpfade werden Im Heck der Lfugzeugs zu GPS Empfänger und Antennensystem Verlegt um einen größtmöglichen Abstand zur Leistungsplatine zu gewährleisten.
+
+\subsection{Schutz des Batteriesystems}
+
+Zur realisierung einer Variablen großen Reichweite bei guter Handhabung weerden im Regelfall mehrere Akkupacks gleicher zellenzahl und Kapazität eingesetzt.
+Inder Praxis ist es unvermeidlich das der Ladezustand zweier Akkupacks aufgrund Bauteilstreuung und Handhabung nie identische ist und damit eine spannungsdifferenz aufweist. Damit würde der Akku mit dem höheren Spannungsniveau sich über eine Niederohmige Verbindung ungebremmst in den zweiten Akku bis zum Spannungsangleich entladen. Dies erfolgt mit  hohen strömen und beschädigung beider akkumulatoren bis hin zum möglichen Brand der Akkuzellen.
+Um zu vermeinden das dieser Ausgleich stattfindet wird ein System Implementiert welche nur einen Stromfluss von allen Angeschlossenen Akkumulatoren in Richtung der Verbraucher Ermöglicht.
+Dieses system wird aufgrund seiner Funktionsweise als " ideale Diode" bezeichnet. Es besteht aus einem integrierten Schaltkreis welches einenen Halbleiterschalter (Metalloxidfeldeffekttransistor kurz MOSFET) regelt um einen Konstante Spannungsdifferenz zwischen eingang und Ausgang dieser Schaltung zu halten.
+
+\subsection{Bereitstellung der Versorgungspannungen}
+
+Die erzeugung der erforderlichen Versorgungsspannungen für alle Subsysteme erfolgt über den Einbau von Gleichstrom-Gleichstrom Wechselrichtern (kurz DC-DC Wandlern).
+Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  wandlung aus der spannung des Batteriesystems.
+Für Empfindliche Systeme wie den Autopiloten und die Sensoren werden die jeweiligen Spannungendurch die Verwendung von Linearreglern erzeugt welche eine hohe Genauigkeit, geringe Varianz und niedrige restwelligkeit des erziehlten Ausgangssopannungswertes gewährleisten.
+
+Um im FEhlerfall einees Susystems durch zum Beispiel Kurtzschluss eine Beschädigung des Spannungsversorgungssysrtems durch überstrom und den daraus Resultierenden Ausfall der Systemgruppe zu vermeiden wird jeder Verbraucher mit einer selstrückstellenden sicherung mit einenm Nennstrom in der Größenordnung von 125 Prozent seines Dauerstroms ausgestattet.
+So wird bei einem Überstromfehler das Subsystem Abgetrennt und der Weiterbetrieb der Versorung nicht beeinträchtigt.
+
+
+\subsection{Handhabung der Logiksignale}
+
+Alle Bussysteme sowie Stuersignale werden nach möglichkeit weit entfernt von leistungspfaden geführt und mit kurzen Verbindungen realisiert.
+Bussyteme wie I2C erhalten die nötigen grundbeschaltungen mit Pull up Wiederständen.
+
+Eingangsignale in den Autopiloten erhalten eine Eingangs Schutzbeschaltung welche mithilfe einer zener Diode und vorwiederständen welche überspannung Ableitet.
