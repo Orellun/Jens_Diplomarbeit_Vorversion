@@ -19,7 +19,7 @@ Dies ermöglicht eine Konservative Einordnung des Betriebspunktes da im Flugbetr
 
 Die Messungen an dem Aufbau des Moduls der Idealen Diode beschränken sich auf das Verhalten als Leistungsbauteil. 
 In Anlehnung an die Referenz Testaufbauten welche von Texas Instruments, Vishay Semiconductors und Toshiba Power Electronics für einzelne Mosfets in den zugehörigen Datenblättern verwendet werden ist auch die Adapterplatine für alle Idealen Dioden gestaltet.
-Die Platine misst 1x1 Zoll mit 35 µm Kupferstärke und regulärem Lötstopplack. Die ein Und Ausgänge sind über Powerpol 55A Steckverbinder Realisiert. SMD Montierte Ösen ermöglichen den Abgriff der Differenzspannung über das gesamte Ideale Dioden Modul. In Einzelfällen wird zum Vergleich der Spannungsabfall über den reinen Mosfet Manuell zum Vergleich gemessen.
+Die Platine misst 1x1 Zoll mit 35 um Kupferstärke und regulärem Lötstopplack. Die ein Und Ausgänge sind über Powerpol 55A Steckverbinder Realisiert. SMD Montierte Ösen ermöglichen den Abgriff der Differenzspannung über das gesamte Ideale Dioden Modul. In Einzelfällen wird zum Vergleich der Spannungsabfall über den reinen Mosfet Manuell zum Vergleich gemessen.
 
 ->> Hier Bild von Messaufbau  Collage ?
 
@@ -33,17 +33,41 @@ Diese ist unmittelbar nach den Ohmschen Gesetzen für die örtliche Verlustleist
 Wie aus der Grafik ersichtlich wird ist, wie erwartet der Mosfet als zentrales Schaltelement für quasi den Gesamten Wiederstand verantwortlich.
 Eine Modifikation der Ersten Diodengeneration mit dem Austausch des Mosfet  Blaa Lbub  mit einem Nennwiederstand von OHHHM durch den Mosfet  BLAA FUU mit einem Nennwiederstand von OOOMHMHM  reduziert den Equivalenten Wiederstand bei einem üblichen Akkustrom 10 A im Dauerbetrieb von OHHHM  auf OHHHM.
 Demgegenüber stellt die zweite Generation eine deutliche Wiederstandserspranis dar.
-Erreicht wir diese durch Ihre optimierte Wärmableitung aufgrund von Neuanordnung der Bauteile und Verkleinerung des PCB sowie der nochmals veränderten Wahl des Mosfets auf MOSFEEEET.
+Erreicht wir diese durch Ihre optimierte Wärmeableitung mit Neuanordnung der Bauteile und Verkleinerung des PCB sowie der nochmals veränderten Wahl des Mosfets auf MOSFEEEET.
 
-Der höchste Dauerstrom liegt bei der standard Generation eins bei  Blub A  und bei der Generation 2 bei BLAAA A. 
-Generell wird der höchste dauerstrom über die Baugruppe durch einen kleinstmöglichen Innenwiederstand des Verwendeten Mosfets und die Kupferfläche begrenzt auf welcher das Modul montiert ist um wärme Abstrahlen zu können. Das Modul PCB selbst hat aufgrund seiner geringen Größe eine vernachlässigbar kleine Kühlleistung.
+Der höchste Dauerstrom liegt bei der unmodifizierten Generation eins bei  Blub A  und bei der Generation 2 bei BLAAA A. 
+Generell wird der höchste Dauerstrom über die Baugruppe durch einen kleinstmöglichen Innenwiederstand des Verwendeten Mosfets und die Kupferfläche begrenzt auf welcher das Modul montiert ist um wärme Abstrahlen zu können. Das Modul PCB selbst hat aufgrund seiner geringen Größe eine vernachlässigbar kleine Kühlleistung.
 
 Die Grafik zeigt zum Vergleich auch das Modul ohne Adapterplatine.
 
 \subsection{5 Volt Servoversorgung}
 
+Um die Eignung der zugekauften 5 V Spannungswandler zu evaluieren wurde exemplarisch ein Wandler mit einem Servo Impulsmäßig belastet.
+Dabei wurde das Dc-Dc Modul mit 14,5 V versorgt und an den auf 5,0 V eingestellten Ausgang ein Servo Angeschlossen. Der Servo wurde von einem Servo Testgerät mit Steuersignalen versorgt welche ihn im Wechsel zu den jeweiligen Extrempositionen seines Verfahrbereichs dirigieren. 
+An den 5,0 V Ausgang des Wandlers und das in den Servo laufende PWM Signal wurde ein  Digitaloszilloskop angeschlossen. Damit  wurde der Einbruch der 5 V Spannung, unter der Impulsartigen Strombelastung, des im Umkehrpunkt Beschleunigenden Servos beobachtet.
+Damit sollte beurteilt werden ob der durch die Regelgeschwindigkeit und die Begrenzte Ausgangskapazität des Wandlers unvermeidbare kurzzeitige Einbruch im Millisekundenbereich inder Spannungsversorgung der Servos kritische Zustände erreicht werden können.
+Es könnte beispielsweise ein Zeitgleiches Ausschlagen mehrerer Servomotoren dazu führen das die Spannung so weit absinkt das keiner der Motoren noch funktionsfähig ist, beziehungsweise die Verfahrgeschwindigkeit deutlich absinkt.
+
+Die Messung ergab einen Kumulierten Einbruch der Spannung um unter 0,5 V. 
+Damit kann das Verhalten in allen erwarteten Flugsituationen als unkritisch bewertet werden. Gegebenenfalls wird hier in Zukunft zur weiteren Absicherung des Verhaltens noch eine Stützung mit Elektrolythkondensatoren umgesetzt. 
+
 \section{Evaluierung der Signalpfade}
+
+Es sollten Fehler im Schaltplan und im Routing der Platine ausgeschlossen werden. Dafür erfolgte ein Test der korrekten Signalführung ohne Einsatz der Sensoren und der Pixhawk Autopiloten Hardware. Dazu wurden an die Aus- und Eingänge des Pixhawk und der Sensoren ein 1 khz 50 Prozent PWM Signal angelegt um mit dem Oszilloskop die jeweils vorgesehene Gegenstelle Überprüft.
+
+Dabei konnten auf der Autopiloten Platine keine Fehler festgestellt werden.
+Auch die Inbetriebnahme der Sensoren und des Autopiloten verlief Hardwareseitig problemlos.
 
 \section{Überprüfung der Logikfunktionen der Leistungsplatine}
 
+Um eine einwandfreie Funktion und damit den sicheren Betrieb der Leistungsplatine sicherzustellen wurden deren Schutz und Regelfunktionen einzeln getestet.
+Es wurden zunächst von einem Paket, aufsteigend alle Permutationen an Spannungsquellen an die drei vorgesehenen Anschlüsse gekoppelt und die Korrekte Führung der Energie überprüft.
+Es wurde die vorgesehene Statusindikation durch Leuchtdioden verschiedener Farben dokumentiert.
+Die Reguläre Führung der Quellen, Blockierung der Flugakkus im Bodenbetrieb und die Anzeige der Energiepfade funktionierte korrekt.
+
 \section{Testlauf der Leistungsplatine}
+
+Anschließend wurde die Platine in den Eingangs beschriebenen Flugmodi im dauerlauf getestet.
+Bei den Tests im Startleistungsbereich stieg der Strom dabei auf einen Wert an, der dazu führte das der Sicherungsschalter in Richtung Motorversorgung Abschaltete.
+Dies führte zu einer Oszillation des zugehörigen Mosfets zwischen Sperr- und Leitzustand. Der in diesem Übergangsbereich hohe innenwiederstand und der damit verbundene hohe Leistungsabfall am Mosfet führte bereits nach kurzer Zeit zur dessen Zerstörung durch Überhitzung.
+Alle weiteren Versuche dieses Verhalten durch Dämpfung der Abschaltzeitschwelle oder Verbesserung der Kühlung blieben erfolglos. Deshalb wurden Aufgrund der geringen verbleibenden Zeit bis zum Wettbewerb diese Schaltung ersatzlos entfernt und mit einer entsprechenden Drahtbrücke überbrückt.
