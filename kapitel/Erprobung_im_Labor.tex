@@ -1,8 +1,44 @@
 \chapter{Erprobung im Labor}\label{cha:Erprobung im Labor}
 
+Nach den anfänglichen Erfahrungen mit Ausfällen von Elektronik und Mechanik bei den ersten Generationen des Flugzeugs, werden alle Komponenten vor dem Einbau einzeln und nach der Montage als System im Labor getestet.
+So können der Schadensumfang im Fehlerfall minimiert werden und die Emulation einzelner Betriebsszenarien ermöglicht eine einfache Eingrenzung möglicher Fehlerquellen.
+In der Regel werden Szenarien wie die Maximalleistungsaufnahme beim Start und Steigflug sowie das Langzeitverhalten im Reiseflugzustand nachgestellt. Dabei werden relevante Parameter wie Temperatur der Bauteile gemessen und mit den Erwartungen verglichen.
+
 \section{Einzeltests von Baugruppen}
 
+Vor dem Einbau in das Gesamtsystem werden sowohl die einzelnen Platinen als auch ihre Modul Platinen einzeln Durchgetestet.
+Dazu wird für die Leistungssysteme ein Labornetzteil als Quelle verwendet welches 0 - 45 V und 0 - 50 A zur Verfügung stellen kann.
+Der Theoretische Nutzbereich des 4 Zelligen Akkusystems von 4,20 V bis 3,00 V je Zellen stellt einen Operationsbreichen von 16,8 V bis 12,0 V bereit. Deshalb wird für die meisten Tests eine Mittlere Spannung von 14,5 V gewählt. Der Strom wird auf etwa 30 A begrenzt um mögliche Fehlerfolgen zu begrenzen.
+Die als kritisch eingestuften Bauteile werden mit Thermoelementen vom Typ K beklebt. Außerdem wird eine FLIR Thermokamera mit einer auflösung von 320x240 Pixel fest Aufgestellt um die Globale Themperaturverteilung auf dem PCB zu beobachten.
+Da die absolute Genauigkeit der Temperaturwerte der Wärmebildaufnahmen aufgrund des ungekühlten CCD zumeist nicht korrekt sind, werden diese mit Hilfe der genauen werte der K Elemente skaliert.
+Die Temperatur ist in unserem Leistungsbereich die Primäre Schadensursache. 
+Um eine Vergleichbare Kühlungssituation aller getesteten Bauteile zu realisieren werden diese in der Ebene in Ruhiger Luft vermessen und auf Referenz Grundplatinen Montiert.
+Dies ermöglicht eine Konservative Einordnung des Betriebspunktes da im Flugbetrieb alle Elektronikkomponenten vom Fahrwind überspült werden und damit von einer Verbesserten Kühlung auzugehen ist.
+
 \subsection{Ideale Diode}
+
+Die Messungen an dem Aufbau des Moduls der Idealen Diode beschränken sich auf das Verhalten als Leistungsbauteil. 
+In Anlehnung an die Referenz Testaufbauten welche von Texas Instruments, Vishay Semiconductors und Toshiba Power Electronics für einzelne Mosfets in den zugehörigen Datenblättern verwendet werden ist auch die Adapterplatine für alle Idealen Dioden gestaltet.
+Die Platine misst 1 x 1 Zoll mit 35 µm Kupferstärke und regulärem Lötstopplack. Die ein Und ausgänge sind über Powerpol 55A Steckverbinder Realisiert. SMD Montierte Ösen ermöglichen den Abgriff der Differenzspannung über das gesamte Ideale Dioden Modul. In Einzelfällen wird zum Vergleich der Spannungsabfall über den reinen Mosfet Manuell zum Vergleich gemessen.
+
+->> Hier Bild von Messaufbau  Collage ?
+
+
+Die vegleichende Messung der beiden Generationen und verschiedener Mosfet Bestückungen zeigt die unterschiedlichen Equivalenten Wiederstände über den durchgeleiteten Strom.
+Diese ist unmittelbar nach en Ohmschen Gesetzen für die örtliche Verlustleistung und damit für die erwärmung der Baugruppe verantwortlich.
+
+
+->> Hier Grafik von Wiederstandsverlauf
+
+Wie aus der Grafik ersichtlich wird ist, wie erwartet der Mosfet als zentrales Schaltelement für quasi den Gesamten Wiederstand verantwortlich.
+Eine Modifikation der Ersten Diodengeneration mit dem Austausch des Mosfet  Blaa Lbub  mit einem Nennwiederstand von OHHHM durch den Mosfet  BLAA FUU mit einem Nennwiederstand von OOOMHMHM  reduziert den Equivalenten Wiederstand bei einem üblichen Akkustrom 10 A im Dauerbetrieb von OHHHM  auf OHHHM.
+Demgegenüber stellt die zweite Generation eine deutliche Wiederstandserspranis dar.
+Erreicht wir diese durch Ihre optimierte Wärmableitung aufgrund von Neuanordnung der Bauteile und Verkleinerung des PCB sowie der nochmals veränderten Wahl des Mosfets auf MOSFEEEET.
+
+Der höchste Dauerstrom liegt bei der standard Generation eins bei  Blub A  und bei der Generation 2 bei BLAAA A. 
+Generell wird der höchste dauerstrom über die Baugruppe durch einen kleinstmöglichen Innenwiederstand des Verwendeten Mosfets und die Kupferfläche begrenzt auf welcher das Modul montiert ist um wärme Abstrahlen zu können. Das Modul PCB selbst hat aufgrund seiner geringen Größe eine vernachlässigbar kleine Kühlleistung.
+
+Die Grafik zeigt zum Vergleich auch das Modul ohne Adapterplatine.
 
 \subsection{5 Volt Servoversorgung}
 
