@@ -5,7 +5,12 @@ Nachdem die Grundlegende Plattform für das Projekt zu Verfügung steht befinden
 
 \section{Entwicklung weiterer Funktionen als Modul}
 
+Das Konzept des fertig aufgebauten,erprobten und bevorrateten Moduls der Idealen Diode als auflötbaren klein PCB hat sich bewährt. Eine Reihe von Anwendungen auch außerhalb der Flugzeugelektronik haben die Zeitersparniss bei der Entwicklung gezeigt und eine zuverlässige Funktion gewährleistet.
+Deshalb sollen weitere Systemfunktionen als Modul realisiert werden.
+Eine interissante Gruppe der Sensoren sind hier beispielsweise die Analog Digital Wandler (ADC). Während die Implementierung des einzelnen ADC in Hardware und Software aufwendig ist, ermöglicht die Anbindung an den I2C Bus den Einsatz vieler gleicher Messplatinen Beispielsweise zur Überwachung der einzelnen Akkuspannungen.
+Auch bisher nicht realisierte Konzepte wie die Rückführung der Realen Ruderwinkel über Encoder oder Hall Sensoren sind in der Kombination aus PCB Modul und CAN Bus realisierbar.
 
+Insgesamt bietet sich das Modulkonzept bei allen Elektrischen Bauteilen an bei denen ein hoher Aufwand für Auslegung, Layout und Erprobung betrieben werden muss um eine zuverlässige Funktion sicherzustellen.
 
 \section{Betrachtung des CAN Bus}
 
@@ -17,7 +22,7 @@ Entsprechend CAN Bus fähige Sensorplatinen sollen als Module konzeptioniert wer
 
 Neben den bisher eingesetzten Akku Packs aus Folienzellen stehen am Markt eine große Bandbreite and Rundzellen verschiedener Formate zur Verfügung. Als Industrielle Massenware stellen sie sich unter anderem als Preisgünstige Alternative dar.
 Eine Analyse des Energie zu Gewicht Verhältnis ergab einen deutlich besseren Wert für die einzelnen Rundzellen gegenüber den Vorliegenden Folienzellen.Erste Prototypen eines Modularen Akkupakets aus 18650 Lithium Polymer Rundzellen der Firma LG lassen eine Verbesserung des Kwh/kg Wertes um 15 bis 25 Prozent erwarten.
-Außerdem soll der neue Packaufbau die Handhabung Verbessern indem der Akku Tausch Ohne eine Demontage des Flügels möglich ist.Zur weiteren Vereinfachung soll auch das in den Röhrenförmige Paketaufbau integrierte Anslussstecksystem beitragen.
+Außerdem soll der neue Packaufbau die Handhabung Verbessern indem der Akku Tausch Ohne eine Demontage des Flügels möglich ist.Zur weiteren Vereinfachung soll auch das in den Röhrenförmige Paketaufbau integrierte Anschlussstecksystem beitragen.
 
 Eine Erprobung der nötigen Verbindungstechniken und die Konstruktion eines Entsprechenden Gesamtpaketes findet derzeit statt.
 Im weiteren Verlauf soll noch die genaue Integration in den Flügel und das gesamte Elektroniksystem gelöst werden.
