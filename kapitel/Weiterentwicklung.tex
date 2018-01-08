@@ -1,4 +1,33 @@
-\chapter{(optional-kurz) Weiterentwicklung}\label{cha:Weiterentwicklung}
+\chapter{Weitere Entwicklungen}\label{cha:Weitere Entwicklungen}
+
+Nachdem die Grundlegende Plattform für das Projekt zu Verfügung steht befinden sich eine Reihe weiterer Verbesserungen und Innovationen in Arbeit. Diese sollen sowohl das Elektroniksystem bezüglich Handhabung, Sicherheit und Leistung optimieren, als auch neue Aspekte welche bisher keine genaue Beachtung erfahren haben, mit Angepassten Technischen Lösungen versehen.
+
+
+\section{Entwicklung weiterer Funktionen als Modul}
+
+
+
+\section{Betrachtung des CAN Bus}
+
+Während in der manntragenden Luftfahrt der CAN Bus bereits seit langem zum Standard zur Übertragung von Sensordaten und auch Steuersignalen eingesetzt wird wurde er bisher im bereich kleiner UAV System kaum verwendet. Hauptgrund dafür stellt die strukturelle  Komplexität des vollständig Paket basierten Datenbusses dar, sowie die Softwareseitig aufwendige Adressierung und Verwaltung der einzelnen Teilnehmer.
+Mit dem erscheinen des Pixhawk 2 wird der CAN Bus als regulärer Systembus geführt und seine Softwarepakte von der Offiziellen Entwicklergruppe gepflegt. Damit entfällt in Anbetracht der berenzten Personal Ressourcen im Labor der bisher Aufwendigste Aspekt der Nutzung dieses Systems. Eine Nutzung der hohen Stabilität bei geringer Leitungszahl und aber auch Flexibilität bei der Anzahl der Teilnehmer wird damit als Sensorbus möglich.
+Entsprechend CAN Bus fähige Sensorplatinen sollen als Module konzeptioniert werden.
+
+\section{Schnellwechsel-Akkusystem aus Rundzellen}
+
+Neben den bisher eingesetzten Akku Packs aus Folienzellen stehen am Markt eine große Bandbreite and Rundzellen verschiedener Formate zur Verfügung. Als Industrielle Massenware stellen sie sich unter anderem als Preisgünstige Alternative dar.
+Eine Analyse des Energie zu Gewicht Verhältnis ergab einen deutlich besseren Wert für die einzelnen Rundzellen gegenüber den Vorliegenden Folienzellen.Erste Prototypen eines Modularen Akkupakets aus 18650 Lithium Polymer Rundzellen der Firma LG lassen eine Verbesserung des Kwh/kg Wertes um 15 bis 25 Prozent erwarten.
+Außerdem soll der neue Packaufbau die Handhabung Verbessern indem der Akku Tausch Ohne eine Demontage des Flügels möglich ist.Zur weiteren Vereinfachung soll auch das in den Röhrenförmige Paketaufbau integrierte Anslussstecksystem beitragen.
+
+Eine Erprobung der nötigen Verbindungstechniken und die Konstruktion eines Entsprechenden Gesamtpaketes findet derzeit statt.
+Im weiteren Verlauf soll noch die genaue Integration in den Flügel und das gesamte Elektroniksystem gelöst werden.
+
+\section{Migration auf die nächste Pixhawk Generation}
+
+Im Zuge des Wachstums des Pixhawk Projekts wurde eine neue Generation von Hardware für den ArduPilot Autopiloten entworfen und in den Software branch eingepflegt. Diese leistungsgesteigerte Version steht seit Anfang 2017 zu Verfügung.
+Sie verfügt neben mehr Prozessorleistung und rendundanten integrierten Sensoren über eine DF17 80 Pin Schnittstelle der Firma JST. Damit ist eine noch Platzsparendere Unterbringung des Pixhawk möglich und es werden weitere Kabelverbindungen eingespart.
+
+Um diese Komponente in Zukunft im Flugsystem nutzen zu können, wird eine Entsprechende Platine und nötige Integration seit Sommer 2017 von Michael Simbürger durchgeführt.
 
 \section{Erfahrungen aus dem Feldeinsatz}
 
