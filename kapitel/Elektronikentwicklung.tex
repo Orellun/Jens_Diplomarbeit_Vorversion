@@ -29,34 +29,75 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \subsubsection{Platinenlayout}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Front-Power_AUVSI_2016_rev-01_layout.png} 
+\caption{Layout der Leistungsplatine} 
+\label{fig:Layout der Leistungsplatine}
+\end{figure}
+
+
 \subsection{Autopilotenplatine}
 
 \subsubsection{Schaltplan}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Rear-Pixhawk_AUVSI16.pdf} 
+\caption{Schaltplan der Autopilotenplatine} 
+\label{fig:Schaltplan der Autopilotenplatine}
+\end{figure}
+
 \subsubsection{Platinenlayout}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Rear-Pixhawk_AUVSI_2016_rev-01-layout.png} 
+\caption{Layout der Autopilotenplatine} 
+\label{fig:Layout der Autopilotenplatine}
+\end{figure}
 
 \section{Bedien- und Schutz Konzepte}
 
 \subsection{Eineindeutige Verbinderauswahl}
 
 Für die angepasste Führung von Leistungspfaden und Signalpfaden wurden im Laufe des bisherigen Projekts je zwei verschiedene Steckersysteme eingesetzt.
+Die Leistungsverbinder sind lediglich in Plus und Minuspol aufgeteilt und die Korrekte Montage wird über eine Mechanische Kodierung sichergestellt.
+Bei den Signalverbindern wird eine mechanische Kodierung über eine einmalige Anzahl an Kontakten angestrebt.So kann in Verbindung mit der konsequenten Beschriftung aller Gegenstellen auf der Platinenseite eine fehlerhafte Montage quasi ausgeschlossen werden. Dabei werden zum teil auch bewusst Steckverbinder mit mehr Kontakten als zu übertragenden signalen ausgewählt um diese Einendeutikeit zu erreichen.
 
 Die Hochstromverbindungen werden stets mit Kabelquerschnitten von 1,5 mm ausgeführt. Der Mantel besteht aus PVC außer in der Nähe von heißen Bauteilen an denen Silikon zum einsatz kommt.
-Zu beginn wurden als Hochstromstecker Bauteile vom Typ BLAAA der Firma BLuuub verwendet.
-Diese wurden von den meisten Zukaufbaugruppen der Pixhawk Systems verwendet und ermöglichten eine mechanisch kodierte eindeutige Verbindung.
-Sie sind für Ströme von Blaaa Ampere und Spannungen von FUUUU freigegeben.
+Zu beginn wurden als Hochstromstecker Bauteile des Typs XT60 der Firma hexTronik verwendet.
+Diese werden von den meisten Zukaufbaugruppen der Pixhawk Systems verwendet und ermöglichten eine mechanisch kodierte eindeutige Verbindung.
+Sie sind für Ströme von 60 Ampere und Spannungen von 120 V freigegeben.
 Jeoch waren diese Steckverbinder nur zur Lötmontage vorgesehen. Es wurde die Erfahrung gemacht das die Verbindungen zur Kabelseite immer wieder versagten. Teils wegen Qualitativ ungenügender Lötstellen, teils wegen Brüchen durch Handhabung mit Bewegung des Kabels am Übergang von der Lötstelle zum Kupferkabel am Steifigkeitssprung.
 
--->> Bild von T90 und Powepol 55 
+-->> Bild von XT60 und Powepol 55 
 
 Daraufhin wurde ein neues System mit Crimpmontage gesucht.
-Hierfür wurde das System Powerpol der Firma FUUU ausgewählt. Die Steckverbinder sind bis zu einem Dauerstrom von 55 Ampere und einer Spannung von 300 V freigegeben.
+Hierfür wurde das System POWERPOLE 45 der Firma Anderson Power Products ausgewählt. Die Steckverbinder sind bis zu einem Dauerstrom von 55 Ampere und einer Spannung von 300 V freigegeben.
 Die Kabelbrüche wurden mit dem Crimpsystem als Fehlerquelle behoben. Sie können in den Quadratischen Gehäusen beliebig nebeneinander eingeclipt werden was größere Steckblöcke ermöglicht. Jedoch führte diese variable Montierbarkeit auch immer wieder zu wiedersprüchlicher Montage von Ladekabeln und Akkus bezüglich der Polposition.
 Außer einer klaren Standardisierung der Polung wurde bisher noch keine Konzept gefunden Bedienfehler auszuschließen. 
 
+Beide Systeme verwenden das Prinzip des Kraftschlusses für die Fixierung der Steckverbindung. Die für Montage und Demontage nötigen Kräfte sind jedoch an beengten Stellen im Flieger immer wieder hinderlich bei der Handhabung. Deshalb wird eine Formschlussbasierte Fixierung ähnlich den Signal Steckverbindern erwogen.
 
 
-<<<<< Hier noch Signalstecker  Lumberg MSF1 und JST PA
+Für die Verbindung von Signalleitungen  und Versorgungsleitungen mit kleinen Strömen wurde zu Beginn das Stecksystem MSF der Firma Lumberg verwendet.
+Dieses ist für 5 A je Pin bei bis zu 160 V freigegeben. Die Fixierung der Verbindung erfolgt hier über Formschluss in Form einer Lasche im Platinensockel des Verbinders welcher eine Nase am Stecker blockiert. Darüber hinaus besteht noch eine gewisser Kraftschluss über die Kontakte der bei der Demontage der Verbindung oft als unerwünscht hoch eingestuft wurde.
+
+
+Als Alternative wurden die Verbinder aus der PA Reihe der Firma JST erprobt und mittlerweile in den Einsatz überführt.
+Die Stecker sind für 3 A je Pin bei maximal 250 V freigegeben.
+Die Fixierung wird auch hier über Formschluss in Gestalt einer Hakennase am Kabelseitigen Stecker realisiert.
+Die Verbinder haben sich bisher bewährt, da sie einen guten Kompromiss aus kompakterer Baugröße und guter Handhabung in Montage und Demontage gegenüber den bisher verwendeten MSF Verbindern darstellen.
+Die Reduzierte Strombelastbarkeit stellt in der Praxis keinen Nachteil dar.Die Logiksignale bringen nur Ströme im mA Bereich auf und auch die Servoversorgung leitet maximal 1 A.
+
+-->> Bild von JST PA und MSF Lumberg
+
+Generell soll weiter ein Standardisierung der Verbinder erfolgen und Vollständig eine Fixierung durch Formschluss etabliert werden.
+Als Hemnis bei der Erprobung neuer Verbinder muss generell aber auch die Verarbeitungsinvestitionen bedacht werden. Zwar sind die Stecker und Buchsen als Bauteile Günstig in der Anschaffung. Jedoch kosten Crimpwerkzeuge in Vertretbarer Qualität ohne weiteres mehrere Hundert Euro für jedes neue Steckersystem.
+
+
+
 
 
 \subsection{Priorisierung externer Anschlüsse im Ground Handling}
