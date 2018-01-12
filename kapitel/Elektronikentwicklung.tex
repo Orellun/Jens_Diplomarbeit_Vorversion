@@ -8,8 +8,9 @@ Dabei wird die kontinuierlich Fortschreitende Implementierung von Erfahrung im Z
 Die in der Saison 2014 begonnen Voruntersuchungen fanden mit dem Flugsystem "Maya" statt.
 Abseits von Strukturellen und Flugmechanischen Problemen war auch die Elektronik eine kontinuierliche Quelle von Fehlern und Ausfällen des Flugzeugs.
 Dies war größtenteils auf die Mangelnde Erfahrung im Umgang mit einem System eines solchen Komplexitätgrades zurückzuführen.Aber auch eine noch unzureichende Ausstattung mit Werkzeug und Testmöglichkeiten und Methoden in Kombination mit der Unübersichtlichen Kabelführung erschwerte die Fehlersuche.
+Auch die ersten versuche mit einem selbst gebauten Flächenmodells waren mit ähnlichen Schwierigkeiten in der Elektronik behaftet.
 
--->> Hier Bild mit Kabelsalat in der Maya
+-->> Hier Bild mit Kabelsalat in der Centerbox der Ersten Version
 
 \section{Neue Platinenaufteilung}
 
@@ -22,7 +23,7 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Front-Power_AUVSI16.pdf} 
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front-Power_AUVSI16.pdf} 
 \caption{Schaltplan der Leistungsplatine} 
 \label{fig:Schaltplan der Leistungsplatine}
 \end{figure}
@@ -31,7 +32,7 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Front-Power_AUVSI_2016_rev-01_layout.png} 
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front-Power_AUVSI_2016_rev-01_layout.png} 
 \caption{Layout der Leistungsplatine} 
 \label{fig:Layout der Leistungsplatine}
 \end{figure}
@@ -43,7 +44,7 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Rear-Pixhawk_AUVSI16.pdf} 
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI16.pdf} 
 \caption{Schaltplan der Autopilotenplatine} 
 \label{fig:Schaltplan der Autopilotenplatine}
 \end{figure}
@@ -52,7 +53,7 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox-Rear-Pixhawk_AUVSI_2016_rev-01-layout.png} 
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI_2016_rev-01-layout.png} 
 \caption{Layout der Autopilotenplatine} 
 \label{fig:Layout der Autopilotenplatine}
 \end{figure}
@@ -103,7 +104,7 @@ Als Hemnis bei der Erprobung neuer Verbinder muss generell aber auch die Verarbe
 \subsection{Priorisierung externer Anschlüsse im Ground Handling}
 
 Die Priorisierung bestimmter Energiequellen wurde erstmals in der Saison 2016 eingesetzt.
-Damit wurde es möglich, an einen Flugfertig Montierten System alle Vorflugkontrollen und die Kalibrierung der Autopilotensysteme durchzuführen ohne die Missionsenergieversorgung zu entladen. Dazu wurde ein ähnlicher Akku mit ebenfalls vier Zellen an einem Zentralen Anschluss in der sogenannten WingCenterBox Verbunden. Solange dieser Angeschlossen war wurde sämtliche Energie für die Steuerelektronik, die Servosysteme und die Motortesläufe ausschließlich aus diesem bezogen. Die zentrale Unterbringung des Anschlusspunktes in der WingCenterBox stellte sicher das ein Schließen der Box Abdeckung nur nach vorheriger Demontage des externen Akkus möglich war, was Bedienungsfehler ausschloss.
+Damit wurde es möglich, an einen Flugfertig Montierten System alle Vorflugkontrollen und die Kalibrierung der Autopilotensysteme durchzuführen ohne die Missionsenergieversorgung zu entladen. Dazu wurde ein ähnlicher Akku mit ebenfalls vier Zellen an einem Zentralen Anschluss in der sogenannten WingCenterBox Verbunden. Solange dieser Angeschlossen war wurde sämtliche Energie für die Steuerelektronik, die Servosysteme und die Motortesläufe ausschließlich aus diesem bezogen. Die zentrale Unterbringung des Anschlusspunktes in der WingCenterBox stellte sicher das ein Schließen der CenterBox Abdeckung nur nach vorheriger Demontage des externen Akkus möglich war, was Bedienungsfehler ausschloss.
 
 --> Bild 2016
 
@@ -112,11 +113,72 @@ Damit wurde es möglich, an einen Flugfertig Montierten System alle Vorflugkontr
 
 \subsection{Schutz vor Fehlbedienung im Leistungspfad}
 
+Da Fehler abseits von Verbindungsproblemen im Leistungspfad quasi immer zur Beschädigung oder zur Zerstörung des selbigen, mit potentiellem Personenschaden führen, werden für diesen die meisten Sicherheitsmechanismen verwendet.
+Hauptsächlich wird das Ideale Dioden System verwendet um einen parallelen Betrieb von Akkus verschiedener Ladungsstände zu ermöglichen.
+
 \subsubsection{Die Ideale Diode}
+
+Die Ideale Diode als Elektronische Schaltung lässt sich in ihrem Schematischen Aufbau mit folgendem Schaltplan darstellen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Schaltplaene/Ideale_Diode_Mini.pdf} 
+\caption{Schaltplan der Idealen Diode erster Generation} 
+\label{fig:Schaltplan der Idealen Diode erster Generation}
+\end{figure}
+
+Grundlegend Besteht der Aufbau aus einem Steuermodul und einem Schalter. Außerdem werden ein und Ausgänge der Aufbaus mit Spannungsdämpfern und Verpolungs- sowie Überspannungsschutz versehen.
+
+
 
 \subsubsection{Die Ideale Diode als Modul}
 
+Um eine leichte Integration in möglichst viele Anwendungen zu ermöglichen wurde beim Layout der Platine die kleinstmögliche Abmessung angestrebt. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Diode_Mini_rev01_ver00.png} 
+\caption{Layout der Idealen Diode erster Generation} 
+\label{fig:Layout der Idealen Diode erster Generation}
+\end{figure}
+
+Damit ergab sich in der Montage ein kompaktes Baumaß für die Platine mit all ihren Bauelementen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Diode_Mini_rev01_ver00-3D.png} 
+\caption{3D Ansicht der Idealen Diode erster Generation} 
+\label{fig:3D Ansicht der Idealen Diode erster Generation}
+\end{figure}
+
 \subsubsection{Optimierung der Idealen Diode}
+
+Nach den Messungen zur Verlustleistung an der idealen Diode wurde die Abhängigkeit von Kühlung und Innenwiderstand des Mosfets quantifiziert. 
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Schaltplaene/Ideale_Diode_25V_rev00-ver00.pdf} 
+\caption{Schaltplan der Idealen Diode zweiter Generation} 
+\label{fig:Schaltplan der Idealen Diode zweiter Generation}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Diode_25V_rev00_ver00.png} 
+\caption{Layout der Idealen Diode zweiter Generation} 
+\label{fig:Layout der Idealen Diode zweiter Generation}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Diode_25V_rev00_ver00-3D.png} 
+\caption{3D Ansicht der Idealen Diode zweiter Generation} 
+\label{fig:3D Ansicht der Idealen Diode zweiter Generation}
+\end{figure}
 
 \section{Integration von Zukaufbaugruppen}
 

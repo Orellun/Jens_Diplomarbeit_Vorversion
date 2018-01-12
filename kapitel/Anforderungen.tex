@@ -5,37 +5,42 @@ Um eine zielgerichtete Entwicklung des Elektronikkonzepts zu ermöglichen wurden
 
 \section{(Verändern) Anforderung an das Flugzeug}
 
-Um einen sicheren Betrieb durch sowohl den Autopiloten als auch durch einen Menschelichen Tespiloten zur ermöglichen
-wurde die Fluggeschwindigkeit zu beginn zunächst auf maximal 18 m/s festgelegt. Die Geschwindikeit am Punkt des Strömungsabsrisses wird REchnerisch zu 10 m/s bestimmt.
-Aus den Beschränkung beim Transport zum Wettberwerb als reguläres Gepäck im Internationalen Flugverkehr ergibt sich eine Maximale Länge aller Komponenten von 700 mm. Diese resultiert aus der größten Länge der zur verfügung stehenden Aluminium
-TRansportkisten von etwa 725mm.
-Ausversicherungsrechtlichen Gründen wurde das Maximale Strasrtgewicht der Plattform auf 5 Kg beschränkt.
+Um einen sicheren Betrieb durch sowohl den Autopiloten als auch durch einen Menschlichen Testpiloten zur ermöglichen
+wurde die Fluggeschwindigkeit zu beginn zunächst auf maximal 18 m/s festgelegt. Die Geschwindigkeit am Punkt des Strömungsabsrisses wird Rechnerisch zu 10 m/s bestimmt.
+Aus den Beschränkung beim Transport zum Wettbewerb als reguläres Gepäck im Internationalen Flugverkehr ergibt sich eine Maximale Länge aller Komponenten von 700 mm. Diese resultiert aus der größten Innenlänge der zur Verfügung stehenden Aluminium Transportkisten von etwa 725mm.
+Aus Versicherungsrechtlichen Gründen wurde das Maximale Startgewicht der Plattform auf 5 Kg beschränkt.
+Es soll eine Ausreichende Operationsdauer für die Aufgaben des Wettbewerbs als auch andere Einsatzszenarien 
+erreicht werden. Dabei müssen ausreichende Reserven für Sichtflug im Fehlerfall, Start, Steigflug und Landung vorgestehen werden.
+Es wird damit eine Gesamtflugdauer von 45 Minuten als Szenario festgelegt.
 
-In dieser Arbeit soll keine Detailierte betrachtung der Aerodynamischen und Mechanischen Entwirklungsresultate für das Eigentliche Flugzeug stattinden. Es wird festgehalten das alle bisher Eingesetzen Flugzeuge die oben definierten Anforderungen erfüllen und Spannweiten zwischen 1,5 m und 2,8 m Aufweisen. Des weiteren wurden Abfluggewichtw von 4 bis 4,9 Kg eingesetzt.
+Alle bestehenden Hubschrauber und Coptersysteme welche für ähnliche Aufgaben eingesetzt werden erzeugen Auftrieb ausschließlich aus Schub im Motor Propeller Antriebsstrang. Ein Flächenflugzeug wandelt den Schub auch bei kleinen Flügelstreckungen wenigstens im Verhältnis von 1:10 in Auftrieb um. Die Gleitzahl ist hier die Bestimmende Größe.
 
-Missionsdauer: größer 40 min.
+Damit fällt durch die Flugzeitvorgabe die Entscheidung für ein Flächenflugzeug. Anders erscheint diese Flugzeug bei Transport von Nutzlast unter Einhaltung des Abfluggewichts nicht realisierbar.
+
+In dieser Arbeit soll keine Detaillierte Betrachtung der Aerodynamischen und Mechanischen Entwicklungsresultate für das Eigentliche Fluggerät stattinden. Es wird festgehalten das alle bisher Eingesetzen Flugzeuge die oben definierten Anforderungen erfüllen und Spannweiten zwischen 1,5 m und 2,8 m Aufweisen. Des weiteren wurden Abfluggewichtw von 4 bis 4,9 Kg eingesetzt.
+
 
 \section{(Verändern) Die Flugplattform als Sensorträger}
 
 Um die zahlreichen Aufgaben des Wettbewerbs \begin{comment} Verweis auf Wettbewerbsaufben \end{comment}
 erfüllen zu können muss die Flugplattform mit Sensoren und Verabreitungsseystemen ausgestatten werden.
 Zu diesen zählen hauptsächlich das Kamerasystem zur detektierung der Buchstaben in der Suchaufgabe mit der dazugehören
-Gimbal Vorrichtung zur Bildstabilisierung. Die Bilddaten sollen an Bord mit einem Kleinrechner "Odroif U4W" verarbeitet werden. Weitere Systeme sind der LIDAR Abstandssensor für einen akkuraten Landeanflug, sowie die Abwurschvorrichtung für das Ei beziehungsweise im späteren REgelwerk die Wasserflasche.
+Gimbal Vorrichtung zur Bildstabilisierung. Die Bilddaten sollen an Bord mit einem Kleinrechner  verarbeitet werden. Weitere Systeme sind der LIDAR Abstandssensor für einen akkuraten Landeanflug, sowie die Abwurfvorrichtung für das Ei beziehungsweise im späteren Regelwerk die Wasserflasche.
 Es werden außerdem eine Reihe von Sensoren zur versorgung des Autoiloten mit Flugdaten mitgeführt. Zu diesen zählen der GPS EMpfänger, der Staudrucksensor sowie Batterie Strom- und Spannungssensoren.
 Als verbindung zur bodenstation werden zwei Funkfequenzen eingesetzt.
 Eine 5 Ghz Wlan Verbindung welche eine Hohe Datenrate zur übertragung von Bildern  ermöglicht jedoch aufgrund der Frequenzchakrteristik am Bioden als gefgenstelle eine Nachgeführrte Richtantenne Erfordert.
-Außerdem eine Dipolantenne im Frequenzbereich 433 Mhz welche zur übertragung der Flugdaten zwischen Autopilot und Bodenstation dient. Sie ermöglicht mit der Kleineren Frequznez eine größere Verbindungereichweite bei gleicher Sendeleistung auf kosten den Datenrate.
+Außerdem eine Dipolantenne im Frequenzbereich 433 Mhz welche zur übertragung der Flugdaten zwischen Autopilot und Bodenstation dient. Sie ermöglicht mit der Kleineren Frequenz eine größere Verbindungsreichweite bei gleicher Sendeleistung auf kosten den Datenrate.
 
-Die Bildfrequenz der 2015 eingesetzten Kamera, Limiterite zunächst die Fluggeschwindigkeit im Reiseflug. Um eine für die weitere Auswerung der Bilder sinnvolle überlappung von etwa 20 Prozent zu erziehlen wurde die Geschwindigkeit auf 15 m/s gesetzt.
+Die Bildfrequenz der 2015 eingesetzten Kamera, Limitierte zunächst die Fluggeschwindigkeit im Reiseflug. Um eine für die weitere Auswerung der Bilder sinnvolle Überlappung von etwa 20 Prozent zu erzielen wurde die Geschwindigkeit auf 15 m/s gesetzt.
 
-Die gesteigerte Bildfrequzenz und Auflösung des neusten Kamerasystems ermöglicht den Einsatz eine gesteigerten Missionsgeschwindikeit von 17 m/s welche für die Kommende Anwednung in der Saison 2018 geplant ist.
+Die gesteigerte Bildfrequzenz und Auflösung des neusten Kamerasystems ermöglicht den Einsatz eine gesteigerten Missionsgeschwindikeit von 17 m/s welche für die Kommende Anwendung in der Saison 2018 geplant ist.
 
 \section{(Ggf. Zusammenlegung mit folgendem Kapitel) Aufgaben der Elektronik}
 
 Die Aufgaben der elektronik lassen sich in den Bereich der Energieverwaltrung und Verlteilung  und den Den Bereicht der Signalverteilung separieren.
 
-Alle Subsystem sollen so gut wie möglich gegen beschädigung durch Überlastung oder FEhlerhafter bedinung geschützt werden.
-Wenn möglich soll ein Kontrolierter Ausfall der Komponenten in bekannten Zstände realisiert werden.
+Alle Subsystem sollen so gut wie möglich gegen Beschädigung durch Überlastung oder Fehlerhafter Bedienung geschützt werden.
+Wenn möglich soll ein Kontrollierter Ausfall der Komponenten in bekannten Zstände realisiert werden.
 
 Aus vorhergegangenen Test wurde das Flugsystem für eine Reine Batterielektrische Versorgung Konuzeptioniert.
 Der Antrieb durch einen Verbrennungsmotor wurde für die Vorliegende Flugzeuggröße trotz besserem Energiegewicht als unzureichend zuverlässig, aufwendig handhabbar, sowie zu teuer eingestuft.
@@ -48,9 +53,10 @@ In diesem Pfand soll die Verwendung Mehrerer Quellen (akkupacks) bei sicherer ha
 Zweitgrößter Energieverbrauchen sind die Aktorsysteme des Flugzeugs ("Servos") für alle Steuerflächen sowie Kamera Gimbal und Auswurfsysteme (Ei, Wasserflasche) verwendet welche mit einer Festen Spannung von 5,0 Volt versorgt werden müssen.
 Dritgrößter Verbraucher an Bord sind die Funksysteme im 5 Ghz und 433 Mhz Band welche einer Festspannungsversorung mit 12 V  bedürfen.
 Ebenfalls berücksichtigt werden sollen Verbraucher des Sensorsystems, wie Kamera und Bordcomputer mit einer Festen Spannung von 5,0 V hoher Qualität.
-Als kleinster Verbraucher bedarf der Autopilatoen Computer und seine Sensorsysteme eine Versorgung Hoher Genauigkeit sowie mit geriger Varianz mit 3,3 V.
+Als kleinster Verbraucher bedarf der Autopiloten Computer und seine Sensorsysteme eine Versorgung Hoher Genauigkeit sowie mit geringer Varianz mit 5,0 V.
+Aus diesen wird innerhalb der Autopiloten Hardware selbstständig 3,3 V erzeugt.
 
-Insgesamt sollen alle subsysteme im Fehlerfall einen Reibungslosen weiterbetrieb der Restklichen Systemteilnehmer gewährleisten. Insbesondere der Aufrechterhaltung der Funktion des Autopilotensystems wird Priorität eingeräumt.
+Insgesamt sollen alle subsysteme im Fehlerfall einen Reibungslosen Weiterbetrieb der Restlichen Systemteilnehmer gewährleisten. Insbesondere der Aufrechterhaltung der Funktion des Autopilotensystems wird Priorität eingeräumt.
 
 
 \subsection{Signalvertreilung}
@@ -91,9 +97,9 @@ DIe Leistungsverbinder im hauptenergiepfad des Motors und der der Akkumulatoren 
 
 Die  Hochleistungskomponenten im Pfad von den Batterien zum antriebsstrtang werden auf einer Räumlich von dem Autopiloten und den Signalpfaden getrennten Platine realisiert. Dies bringt eine Reihe von Vorteilen für das system und die entwicklung mit sich.
 
-Es ist eine Bessere einzelne Austauschbarkeit für weiterentwicklung und Reparatur zu möglich.
-Die Schadenshäufigkeit und derren folgen sind auf der Leistungsplatine größer und graviernder was einen häufigeren 
-austausch und weiterentwicklung zur Fehlerkorretur nötig macht.
+Es ist eine Bessere einzelne Austauschbarkeit für Weiterentwicklung und Reparatur zu möglich.
+Die Schadenshäufigkeit und deren folgen sind auf der Leistungsplatine größer und graviernder was einen häufigeren 
+Austausch und Weiterentwicklung zur Fehlerkorretur nötig macht.
 
 Der Einsatz verschiedener Fertigungstechniken auf der Leistungs und der Autopilotenplatine wird vereinfacht.
 
@@ -104,14 +110,14 @@ Sonstige Signalpfade werden Im Heck der Lfugzeugs zu GPS Empfänger und Antennen
 \subsection{Schutz des Batteriesystems}
 
 Zur realisierung einer Variablen großen Reichweite bei guter Handhabung weerden im Regelfall mehrere Akkupacks gleicher zellenzahl und Kapazität eingesetzt.
-Inder Praxis ist es unvermeidlich das der Ladezustand zweier Akkupacks aufgrund Bauteilstreuung und Handhabung nie identische ist und damit eine spannungsdifferenz aufweist. Damit würde der Akku mit dem höheren Spannungsniveau sich über eine Niederohmige Verbindung ungebremmst in den zweiten Akku bis zum Spannungsangleich entladen. Dies erfolgt mit  hohen strömen und beschädigung beider akkumulatoren bis hin zum möglichen Brand der Akkuzellen.
+Inder Praxis ist es unvermeidlich das der Ladezustand zweier Akkupacks aufgrund Bauteilstreuung und Handhabung nie identische ist und damit eine Spannungsdifferenz aufweist. Damit würde der Akku mit dem höheren Spannungsniveau sich über eine Niederohmige Verbindung ungebremmst in den zweiten Akku bis zum Spannungsangleich entladen. Dies erfolgt mit  hohen strömen und beschädigung beider akkumulatoren bis hin zum möglichen Brand der Akkuzellen.
 Um zu vermeinden das dieser Ausgleich stattfindet wird ein System Implementiert welche nur einen Stromfluss von allen Angeschlossenen Akkumulatoren in Richtung der Verbraucher Ermöglicht.
 Dieses system wird aufgrund seiner Funktionsweise als " ideale Diode" bezeichnet. Es besteht aus einem integrierten Schaltkreis welches einenen Halbleiterschalter (Metalloxidfeldeffekttransistor kurz MOSFET) regelt um einen Konstante Spannungsdifferenz zwischen eingang und Ausgang dieser Schaltung zu halten.
 
 \subsection{Bereitstellung der Versorgungspannungen}
 
 Die erzeugung der erforderlichen Versorgungsspannungen für alle Subsysteme erfolgt über den Einbau von Gleichstrom-Gleichstrom Wechselrichtern (kurz DC-DC Wandlern).
-Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  wandlung aus der spannung des Batteriesystems.
+Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  Wandlung aus der Spannung des Batteriesystems.
 Für Empfindliche Systeme wie den Autopiloten und die Sensoren werden die jeweiligen Spannungendurch die Verwendung von Linearreglern erzeugt welche eine hohe Genauigkeit, geringe Varianz und niedrige restwelligkeit des erziehlten Ausgangssopannungswertes gewährleisten.
 
 Um im FEhlerfall einees Susystems durch zum Beispiel Kurtzschluss eine Beschädigung des Spannungsversorgungssysrtems durch überstrom und den daraus Resultierenden Ausfall der Systemgruppe zu vermeiden wird jeder Verbraucher mit einer selstrückstellenden sicherung mit einenm Nennstrom in der Größenordnung von 125 Prozent seines Dauerstroms ausgestattet.
@@ -121,6 +127,6 @@ So wird bei einem Überstromfehler das Subsystem Abgetrennt und der Weiterbetrie
 \subsection{Handhabung der Logiksignale}
 
 Alle Bussysteme sowie Stuersignale werden nach möglichkeit weit entfernt von leistungspfaden geführt und mit kurzen Verbindungen realisiert.
-Bussyteme wie I2C erhalten die nötigen grundbeschaltungen mit Pull up Wiederständen.
+Bussyteme wie I2C erhalten die nötigen Grundbeschaltungen mit Pull up Wiederständen.
 
-Eingangsignale in den Autopiloten erhalten eine Eingangs Schutzbeschaltung welche mithilfe einer zener Diode und vorwiederständen welche überspannung Ableitet.
+Eingangsignale in den Autopiloten erhalten eine Eingangs Schutzbeschaltung welche mithilfe einer zener Diode und Vorwiederständen welche Überspannung Ableitet.
