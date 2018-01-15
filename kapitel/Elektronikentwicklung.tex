@@ -42,6 +42,12 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 \label{fig:Layout der Leistungsplatine}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front-Power_AUVSI_2016_rev-01-3D.png} 
+\caption{3D Rendering der Leistungsplatine} 
+\label{fig:3D Rendering der Leistungsplatine}
+\end{figure}
 
 \subsection{Autopilotenplatine}
 
@@ -75,21 +81,33 @@ Die Hochstromverbindungen werden stets mit Kabelquerschnitten von 1,5 mm ausgef�
 Zu beginn wurden als Hochstromstecker Bauteile des Typs XT60 der Firma hexTronik verwendet.
 Diese werden von den meisten Zukaufbaugruppen der Pixhawk Systems verwendet und ermöglichten eine mechanisch kodierte eindeutige Verbindung.
 Sie sind für Ströme von 60 Ampere und Spannungen von 120 V freigegeben.
-Jeoch waren diese Steckverbinder nur zur Lötmontage vorgesehen. Es wurde die Erfahrung gemacht das die Verbindungen zur Kabelseite immer wieder versagten. Teils wegen Qualitativ ungenügender Lötstellen, teils wegen Brüchen durch Handhabung mit Bewegung des Kabels am Übergang von der Lötstelle zum Kupferkabel am Steifigkeitssprung.
+Jedoch waren diese Steckverbinder nur zur Lötmontage vorgesehen. Es wurde die Erfahrung gemacht das die Verbindungen zur Kabelseite immer wieder versagten. Teils wegen Qualitativ ungenügender Lötstellen, teils wegen Brüchen durch Handhabung mit Bewegung des Kabels am Übergang von der Lötstelle zum Kupferkabel am Steifigkeitssprung.
 
--->> Bild von XT60 und Powepol 55 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_XT60.jpg} 
+\caption{XT60 Hochstromverbinder} 
+\label{fig:XT60 Hochstromverbinder}
+\end{figure}
 
 Daraufhin wurde ein neues System mit Crimpmontage gesucht.
 Hierfür wurde das System POWERPOLE 45 der Firma Anderson Power Products ausgewählt. Die Steckverbinder sind bis zu einem Dauerstrom von 55 Ampere und einer Spannung von 300 V freigegeben.
 Die Kabelbrüche wurden mit dem Ersatz der Lötverbidungen durch das Crimpsystem beseitigt. Sie können in den Quadratischen Gehäusen beliebig nebeneinander eingeclipt werden was größere Steckblöcke ermöglicht. Jedoch führte diese variable Montierbarkeit auch immer wieder zu wiedersprüchlicher Montage von Ladekabeln und Akkus bezüglich der Polposition.
 Außer einer klaren Standardisierung der Polung wurde bisher noch keine Konzept gefunden Bedienfehler auszuschließen. 
 
-Beide Systeme verwenden das Prinzip des Kraftschlusses für die Fixierung der Steckverbindung. Die für Montage und Demontage nötigen Kräfte sind jedoch an beengten Stellen im Flieger immer wieder hinderlich bei der Handhabung. Deshalb wird eine Formschlussbasierte Fixierung ähnlich den Signal Steckverbindern erwogen.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_Anderson_Powerpol.jpg} 
+\caption{Neuer Verbinder  Powerpol 45} 
+\label{fig:Neuer Verbinder  Powerpol 45}
+\end{figure}
 
+
+Beide Systeme verwenden das Prinzip des Kraftschlusses für die Fixierung der Steckverbindung. Die für Montage und Demontage nötigen Kräfte sind jedoch an beengten Stellen im Flieger immer wieder hinderlich bei der Handhabung. Deshalb wird eine Formschlussbasierte Fixierung ähnlich den Signal Steckverbindern erwogen.
 
 Für die Verbindung von Signalleitungen  und Versorgungsleitungen mit kleinen Strömen wurde zu Beginn das Stecksystem MSF der Firma Lumberg verwendet.
 Dieses ist für 5 A je Pin bei bis zu 160 V freigegeben. Die Fixierung der Verbindung erfolgt hier über Formschluss in Form einer Lasche im Platinensockel des Verbinders welcher eine Nase am Stecker blockiert. Darüber hinaus besteht noch eine gewisser Kraftschluss über die Kontakte der bei der Demontage der Verbindung oft als unerwünscht hoch eingestuft wurde.
-
 
 Als Alternative wurden die Verbinder aus der PA Reihe der Firma JST erprobt und mittlerweile in den Einsatz überführt.
 Die Stecker sind für 3 A je Pin bei maximal 250 V freigegeben.
@@ -100,13 +118,13 @@ Die Reduzierte Strombelastbarkeit stellt in der Praxis keinen Nachteil dar.Die L
 \begin{figure}[H]
 
 \begin{subfigure}{}
-\includegraphics[width=0.6\textwidth, center]{bilder/Stecker/Stecker_Lumberg_MSF.jpg} 
+\includegraphics[width=0.7\textwidth, center]{bilder/Stecker/Stecker_Lumberg_MSF.jpg} 
 \caption{Der ursprünglich eingesetzte Lumberg MSF Steckverbinder} 
 \label{fig:Der ursprünglich eingesetzte Lumberg MSF Steckverbinder}
 \end{subfigure}
 
 \begin{subfigure}{}
-\includegraphics[width=0.6\textwidth, center]{bilder/Stecker/Stecker_JST_PA.jpg} 
+\includegraphics[width=0.7\textwidth, center]{bilder/Stecker/Stecker_JST_PA.jpg} 
 \caption{Der mittlerweile eingesetzte JST PA Steckverbinder} 
 \label{fig:Der mittlerweile eingesetzte JST PA Steckverbinder}
 \end{subfigure}
@@ -132,8 +150,6 @@ Damit wurde es möglich, an einen Flugfertig Montierten System alle Vorflugkontr
 \label{fig:Blick auf die Externen Anschlüsse der AUVSI 2016 Platine}
 \end{figure}
 
--->>Schaltplan 2016 
-
 
 \subsection{Schutz vor Fehlbedienung im Leistungspfad}
 
@@ -146,18 +162,37 @@ Die Ideale Diode als Elektronische Schaltung lässt sich in ihrem Schematischen 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{Schaltplaene/Ideale_Diode_Mini.pdf} 
+\includegraphics[width=1.0\textwidth]{Schaltplaene/Ideale_Diode_Mini.pdf} 
 \caption{Schaltplan der Idealen Diode erster Generation} 
 \label{fig:Schaltplan der Idealen Diode erster Generation}
 \end{figure}
 
 Grundlegend Besteht der Aufbau aus einem Steuermodul und einem Schalter. Außerdem werden ein und Ausgänge der Aufbaus mit Spannungsdämpfern und Verpolungs- sowie Überspannungsschutz versehen.
 
+Die Eingangsseite der Schaltung ist mit einer Schottkydiode vom Typ B180-13-F beschaltet um eventuell am Eingang auftretende Verpolungen kurzzeitig abzuleiten und die Steuerelektronik vor negativen Spannungen zu schützen. Außerdem ist hier ein Keramikkondensator mit 1 uF verbaut um Spannungsschwankungen auf der Eingangseite zu glätten.
 
+Auf der Ausgangsseite ist ebenfalls ein Keramikkondensator als Dämpfer verbaut. Hier wird ein Kapazitätswert von 22 uF eingesetzt. Dieser Dämpfer begrenzt den Spannungsanstieg am Ausgang der Schaltung und trägt dazu bei der Schutzdiode den nötigen Zeitraum bis zum Vollständigen Durchschalten bei Spannungsspitzen abzupuffern.
+Die Überspannungsschutzdiode SMBJ33D wird mit der Aufgabe eingesetzt Überspannungen im Ausgangsbereich gegen Ground Abzuleiten. Bei ihr Handelt es sich um eine Spezielle Bauform aus Zener Diode und für einen bestimmten Ableitstrom angepassten Innenwiederstand. Die Diode löst laut Datenblatt zwischen 37,3 und 40 V aus und schützt damit den Mosfet und andere Komponenten des Bordsystems vor Überspannung. Test ergaben ein reproduzierbares Auslösen bei  etwa 29 V. Spannungsspitzen können auf der Ausgangsseite des Leistungspfades beispielsweise durch An- und Absteckvorgänge von Verbrauchern und damit verbundenen Induktiven Spannungesüberhöhungen verursacht werden. Auch kann der Antriebsmotor im Leerlauf in das Versorgungssystem Spannung induzieren.
+
+Den Kern der Schaltung bildet der Schalter, hier ausgeführt als N-Kanal Mosfet vom Typ TPN2R304PL.Und die Integrierte Schaltung LM5050-1 als Regler für den Betrieb als Ideale Diode.
+
+Die Integrierte Schaltung Steuert über zwei abgeglichene Transistoren die Gate Spannung des an GATE Angeschlossenen Mosfet. Die Nötige Ladung wird über eine Ladungspumpe auf 12 V bereitgestellt. Zu dieser Vorrichtung gehört auch der Wiederstand R1 und der Kondensator C2.
+Durch oszillation wird hier der Spannung um bis zu 12V  über das Spannungsniveau am IN Eingang angehoben. Um eine Beschädigung des FET Gates zu vermeiden ist der GATE Kanal mit einer Zener Diode mit 14 V Durchbruchsspannung gegen IN gesichert.
+
+Ein Komperator Vergleicht die Differenzspannung zwischen IN und OUT mit einem Offset um 28 mV. Ein weiterer ist mit einem Offset um 1,5 V und dem Eingang OFF und dessen 5 uA Quelle beschaltet. Letzterer ermöglicht die Steuerung an und abzuschalten. Die Ausgänge der beiden Komperatoren werden in ein logisches Oder Glied geführt. Dieses Steuert im Ausgelösten Fall das Gate eines internen FETs an welcher daraufhin die Gatespannung auf IN nach unten zieht und den externen Mosfet Abschaltet. 
+
+Die Drei relevanten Betriebszustände der Schaltung und ihres Reglers lassen sich in Kleinstströme, Nennstrom Vorwärts und Stromfluss rückwärts einteilen.
+
+Im Bereich kleinster Ströme werden diese ausschließlich über die sogenannte Body Diode des Mosfets geleitet. Solange die Differensspannung über den Mosfet unterhalb 22 mV bleibt tritt die Steuerung noch nicht in Aktion.
+
+Im Bereich eines Spannungsabfalls über den Mosfet größer 22 mV beginnt die Steuerung das Gate des FET auf bis zu 12 V zu laden. Ab diesem Punkt bis zum Maximalen Nennstrom wird der Spannungsabfall durch den Innenwiederstand des durchgehend geschalteten Fets bestimmt. Im Fall des TPN2R304PL liegt dieser bei etwa 1,8 Milliohm. Damit ist bei 10 A ein im Vergleich von 200 mV Spannungsabfall an einer herkömmlichen Siliziumdiode, ein Spannungsabfall von etwa 33 mV möglich, welcher deutliche geringere Verlustleistungen verursacht.
+
+Für den Fall eines Rückwärtsfließenden Stroms und entsprechend negativer Spannungsdifferenz zwischen IN und OUT, wird aber einem Wert von -28 mV über den ersten Komperator, die Entladung des Mosfet Gates ausgelöst. Damit kommt der Aufbau seinem Dioden Verhalten nach und es wird nur ein Stromfluss in eine Richtung ermöglicht.
 
 \subsubsection{Die Ideale Diode als Modul}
 
 Um eine leichte Integration in möglichst viele Anwendungen zu ermöglichen wurde beim Layout der Platine die kleinstmögliche Abmessung angestrebt. 
+Das Folgende Bild zeigt das realisierte Layout der Komponenten in der ersten Generation der Idealen Dioden Platinen.
 
 \begin{figure}[H]
 \centering
@@ -166,7 +201,11 @@ Um eine leichte Integration in möglichst viele Anwendungen zu ermöglichen wurd
 \label{fig:Layout der Idealen Diode erster Generation}
 \end{figure}
 
-Damit ergab sich in der Montage ein kompaktes Baumaß für die Platine mit all ihren Bauelementen.
+Der sich im Zentrum befindende Mosfet wurde als VSSOP8 Gehäuse ausgeführt um Platz zu sparen. Zur linken befindet sich als größtes Bauteil die Schottky Diode am Eingang mit dem Dämpfungskondensator darunter. Unmittelbar darüber ist der Dämpfungskondesnator für den Ausgang angeordnet. Auf der Rechten Hälfte der Platine befindet sich als größtes Bauteil die Überspannungs Schutzdiode. Unmittelbar darunter der LM5050-1 im SOT23-6 Gehäuse.
+Grundsätzlich Fließt der Strom regulär von unten im Bild nach oben.
+Der Anschluss an die darunterliegende Platine in SMD Technik erfolgt über ein IN und ein OUT Pad links auf der Unterseite und ein GND Pad auf der Rechten Unterseite.
+Der Strompfad ist mit je 12 Vias zwischen Unter und Oberseite Verbunden. Diese dienen auch zum Abtransport der Wärme in das Darunterliegende PCB.
+Damit ergab sich in der Montage ein kompaktes Baumaß von 16 x 12 mm für die Platine mit all ihren Bauelementen.
 
 \begin{figure}[H]
 \centering
@@ -177,7 +216,16 @@ Damit ergab sich in der Montage ein kompaktes Baumaß für die Platine mit all i
 
 \subsubsection{Optimierung der Idealen Diode}
 
-Nach den Messungen zur Verlustleistung an der idealen Diode wurde die Abhängigkeit von Kühlung und Innenwiderstand des Mosfets quantifiziert. 
+Nach den Messungen zur Verlustleistung an der idealen Diode erster Generation wurde die Abhängigkeit von Kühlung und Innenwiderstand des Mosfets quantifiziert. 
+Die Kühlleistung hängt größtenteils unbeinflussbar von Aufbau und Größe der unter dem Ideale Dioden PCB liegenden Hauptplatine ab.
+
+Damit verbleibt der Innenwiederstand des verwendeten Mosfets als größtes Optimierungspotential.
+
+Es wurde ein neuer Mosfet ausgewählt der im Vergleich zu den 1,8 Milliohm mit 0,41 Milliohm einen um den Faktor vier kleineren Innenwiederstand aufweist. Es wurde auch ein größeres Gehäuse vom Typ SOPa 8 gewählt um die Thermische Anbindung des Fet an das PCB zu verbessern.
+Auch wurde der Wert des Ausgangskondensators mit 1 uF als ausreichend bestimmt und entsprechend verkleinert.
+
+Es wurde außerdem die Entscheidung getroffen die Betriebsbereiche des ideale Dioden Systems auf zwei Platinen aufzuteilen. Die vorliegende Schaltung ist für einen Betrieb bis 25 V ausgelegt. Ihre Überspannungs Schutzdiode löst bei 24,5 V aus.
+Die zweite Variante ist Vergleichbar bis 55 V konzeptioniert und hier nicht aufgeführt.
 
 
 \begin{figure}[H]
@@ -186,6 +234,14 @@ Nach den Messungen zur Verlustleistung an der idealen Diode wurde die Abhängigk
 \caption{Schaltplan der Idealen Diode zweiter Generation} 
 \label{fig:Schaltplan der Idealen Diode zweiter Generation}
 \end{figure}
+
+Das layout der Platine wurde nur geringfügig verändert. Das LM5050 Bauteil wurde in die Mitte der Rechten Platinenhälfte verlegt um die Anschlussleiterbahnen zu verkürzen. Außerdem ist die Ausgangskapazität in zwei Keramik Kondensatoren der Baugröße 0805 ausgeführt, um die Kapazitätsverluste durch Temperaturanstieg zu verringern.
+Der Einsatz von sogenannten Plated Vias also aufgefüllten Durchkontaktierungen ermöglicht es hier auch erstmals Bauteile auf Durchkontaktierungen zu Positionieren.
+Beiden Dioden sind in der linken Hälfte der Platine konzentriert.
+
+Um die Thermische Anbindung an die Hauptplatine zu verbessern wurde die Anzahl der Vias auf 20 erhöht und deren Position direkt unter die Löt Pads des Mosfet verlegt. Damit ist der Übergangswiederstand zur Hauptplatine minimiert.
+
+Damit ist eine Reduzierung der Abmaße des PCBs auf 14 x 12 mm möglich geworden.Die Leistung im Thermischen und damit Elektrischen Bereich konnte nochmals verbessert werden. Mit dem neuen Mosfet sind durch seinen geringen Innenwiederstand deutlich größere Nennströme möglich.
 
 
 \begin{figure}[H]
