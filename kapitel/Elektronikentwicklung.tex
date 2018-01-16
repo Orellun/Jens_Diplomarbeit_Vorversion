@@ -26,9 +26,11 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \subsubsection{Schaltplan}
 
+\newpage
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front-Power_AUVSI16.pdf} 
+\includegraphics[width=1.4\textwidth,angle =90]{bilder/Centerbox/Centerbox-Front-Power_AUVSI16.pdf} 
 \caption{Schaltplan der Leistungsplatine} 
 \label{fig:Schaltplan der Leistungsplatine}
 \end{figure}
@@ -53,9 +55,11 @@ Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfac
 
 \subsubsection{Schaltplan}
 
+\newpage
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI16.pdf} 
+\includegraphics[width=1.25\textwidth,angle =90]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI16.pdf} 
 \caption{Schaltplan der Autopilotenplatine} 
 \label{fig:Schaltplan der Autopilotenplatine}
 \end{figure}
@@ -77,7 +81,7 @@ Für die angepasste Führung von Leistungspfaden und Signalpfaden wurden im Lauf
 Die Leistungsverbinder sind lediglich in Plus und Minuspol aufgeteilt und die Korrekte Montage wird über eine Mechanische Kodierung sichergestellt.
 Bei den Signalverbindern wird eine mechanische Kodierung über eine einmalige Anzahl an Kontakten angestrebt.So kann in Verbindung mit der konsequenten Beschriftung aller Gegenstellen auf der Platinenseite eine fehlerhafte Montage quasi ausgeschlossen werden. Dabei werden zum teil auch bewusst Steckverbinder mit mehr Kontakten als zu übertragenden signalen ausgewählt um diese Einendeutikeit zu erreichen.
 
-Die Hochstromverbindungen werden stets mit Kabelquerschnitten von 1,5 mm ausgeführt. Der Mantel besteht aus PVC außer in der Nähe von heißen Bauteilen an denen Silikon zum einsatz kommt.
+Die Hochstromverbindungen werden stets mit Kabelquerschnitten von 1,5 mm ausgeführt \cite{DIN_VDE_0298}. Der Mantel besteht aus PVC außer in der Nähe von heißen Bauteilen an denen Silikon zum einsatz kommt.
 Zu beginn wurden als Hochstromstecker Bauteile des Typs XT60 der Firma hexTronik verwendet.
 Diese werden von den meisten Zukaufbaugruppen der Pixhawk Systems verwendet und ermöglichten eine mechanisch kodierte eindeutige Verbindung.
 Sie sind für Ströme von 60 Ampere und Spannungen von 120 V freigegeben.
@@ -86,7 +90,8 @@ Jedoch waren diese Steckverbinder nur zur Lötmontage vorgesehen. Es wurde die E
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_XT60.jpg} 
+\adjincludegraphics[trim={20cm 8cm 16cm 5cm},width=0.9\textwidth,clip]{bilder/Stecker/Stecker_XT60.jpg}
+%\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_XT60.jpg} 
 \caption{XT60 Hochstromverbinder} 
 \label{fig:XT60 Hochstromverbinder}
 \end{figure}
@@ -98,7 +103,8 @@ Außer einer klaren Standardisierung der Polung wurde bisher noch keine Konzept 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_Anderson_Powerpol.jpg} 
+\adjincludegraphics[trim={15cm 12cm 10cm 0},width=0.9\textwidth,clip]{bilder/Stecker/Stecker_Anderson_Powerpol.jpg}
+%\includegraphics[width=0.9\textwidth, center]{bilder/Stecker/Stecker_Anderson_Powerpol.jpg} 
 \caption{Neuer Verbinder  Powerpol 45} 
 \label{fig:Neuer Verbinder  Powerpol 45}
 \end{figure}
@@ -116,19 +122,18 @@ Die Verbinder haben sich bisher bewährt, da sie einen guten Kompromiss aus komp
 Die Reduzierte Strombelastbarkeit stellt in der Praxis keinen Nachteil dar.Die Logiksignale bringen nur Ströme im mA Bereich auf und auch die Servoversorgung leitet maximal 1 A.
 
 \begin{figure}[H]
-
-\begin{subfigure}{}
-\includegraphics[width=0.7\textwidth, center]{bilder/Stecker/Stecker_Lumberg_MSF.jpg} 
+\centering
+\adjincludegraphics[trim={13cm 14cm 8cm 30cm},width=0.7\textwidth,clip]{bilder/Stecker/Stecker_Lumberg_MSF.jpg}
+%\includegraphics[trim={0 0 0 2cm}, clip=true, width=0.7\textwidth, center]{bilder/Stecker/Stecker_Lumberg_MSF.jpg} 
 \caption{Der ursprünglich eingesetzte Lumberg MSF Steckverbinder} 
 \label{fig:Der ursprünglich eingesetzte Lumberg MSF Steckverbinder}
-\end{subfigure}
+\end{figure}
 
-\begin{subfigure}{}
-\includegraphics[width=0.7\textwidth, center]{bilder/Stecker/Stecker_JST_PA.jpg} 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{bilder/Stecker/Stecker_JST_PA.jpg} 
 \caption{Der mittlerweile eingesetzte JST PA Steckverbinder} 
 \label{fig:Der mittlerweile eingesetzte JST PA Steckverbinder}
-\end{subfigure}
-
 \end{figure}
 
 Generell soll weiter ein Standardisierung der Verbinder erfolgen und Vollständig eine Fixierung durch Formschluss etabliert werden.
@@ -145,7 +150,8 @@ Damit wurde es möglich, an einen Flugfertig Montierten System alle Vorflugkontr
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front_Power_AUVSI_2016_Oberseite.jpg} 
+\adjincludegraphics[trim={1cm 15cm 1cm 15cm},width=0.9\textwidth,clip]{bilder/Centerbox/Centerbox-Front_Power_AUVSI_2016_Oberseite.jpg}
+%\includegraphics[width=0.9\textwidth]{bilder/Centerbox/Centerbox-Front_Power_AUVSI_2016_Oberseite.jpg} 
 \caption{Blick auf die Externen Anschlüsse der AUVSI 2016 Platine} 
 \label{fig:Blick auf die Externen Anschlüsse der AUVSI 2016 Platine}
 \end{figure}
@@ -177,15 +183,15 @@ Die Überspannungsschutzdiode SMBJ33D wird mit der Aufgabe eingesetzt Überspann
 Den Kern der Schaltung bildet der Schalter, hier ausgeführt als N-Kanal Mosfet vom Typ TPN2R304PL.Und die Integrierte Schaltung LM5050-1 als Regler für den Betrieb als Ideale Diode.
 
 Die Integrierte Schaltung Steuert über zwei abgeglichene Transistoren die Gate Spannung des an GATE Angeschlossenen Mosfet. Die Nötige Ladung wird über eine Ladungspumpe auf 12 V bereitgestellt. Zu dieser Vorrichtung gehört auch der Wiederstand R1 und der Kondensator C2.
-Durch oszillation wird hier der Spannung um bis zu 12V  über das Spannungsniveau am IN Eingang angehoben. Um eine Beschädigung des FET Gates zu vermeiden ist der GATE Kanal mit einer Zener Diode mit 14 V Durchbruchsspannung gegen IN gesichert.
+Durch oszillation wird hier der Spannung um bis zu 12V  über das Spannungsniveau am IN Eingang angehoben. Um eine Beschädigung des FET Gates zu vermeiden ist der GATE Kanal mit einer Zener Diode mit 14 V Durchbruchsspannung gegen IN gesichert \footnote{\cite[Seite~12.]{LM5050-1}}.
 
 Ein Komperator Vergleicht die Differenzspannung zwischen IN und OUT mit einem Offset um 28 mV. Ein weiterer ist mit einem Offset um 1,5 V und dem Eingang OFF und dessen 5 uA Quelle beschaltet. Letzterer ermöglicht die Steuerung an und abzuschalten. Die Ausgänge der beiden Komperatoren werden in ein logisches Oder Glied geführt. Dieses Steuert im Ausgelösten Fall das Gate eines internen FETs an welcher daraufhin die Gatespannung auf IN nach unten zieht und den externen Mosfet Abschaltet. 
 
 Die Drei relevanten Betriebszustände der Schaltung und ihres Reglers lassen sich in Kleinstströme, Nennstrom Vorwärts und Stromfluss rückwärts einteilen.
 
-Im Bereich kleinster Ströme werden diese ausschließlich über die sogenannte Body Diode des Mosfets geleitet. Solange die Differensspannung über den Mosfet unterhalb 22 mV bleibt tritt die Steuerung noch nicht in Aktion.
+Im Bereich kleinster Ströme werden diese ausschließlich über die sogenannte Body Diode des Mosfets geleitet \cite{Herberg2013}. Solange die Differensspannung über den Mosfet unterhalb 22 mV bleibt tritt die Steuerung noch nicht in Aktion.
 
-Im Bereich eines Spannungsabfalls über den Mosfet größer 22 mV beginnt die Steuerung das Gate des FET auf bis zu 12 V zu laden. Ab diesem Punkt bis zum Maximalen Nennstrom wird der Spannungsabfall durch den Innenwiederstand des durchgehend geschalteten Fets bestimmt. Im Fall des TPN2R304PL liegt dieser bei etwa 1,8 Milliohm. Damit ist bei 10 A ein im Vergleich von 200 mV Spannungsabfall an einer herkömmlichen Siliziumdiode, ein Spannungsabfall von etwa 33 mV möglich, welcher deutliche geringere Verlustleistungen verursacht.
+Im Bereich eines Spannungsabfalls über den Mosfet größer 22 mV beginnt die Steuerung das Gate des FET auf bis zu 12 V zu laden \cite{LM5050-1}. Ab diesem Punkt bis zum Maximalen Nennstrom wird der Spannungsabfall durch den Innenwiederstand des durchgehend geschalteten Fets bestimmt. Im Fall des TPN2R304PL liegt dieser bei etwa 1,8 Milliohm. Damit ist bei 10 A ein im Vergleich von 200 mV Spannungsabfall an einer herkömmlichen Siliziumdiode, ein Spannungsabfall von etwa 33 mV möglich, welcher deutliche geringere Verlustleistungen verursacht.
 
 Für den Fall eines Rückwärtsfließenden Stroms und entsprechend negativer Spannungsdifferenz zwischen IN und OUT, wird aber einem Wert von -28 mV über den ersten Komperator, die Entladung des Mosfet Gates ausgelöst. Damit kommt der Aufbau seinem Dioden Verhalten nach und es wird nur ein Stromfluss in eine Richtung ermöglicht.
 
@@ -204,7 +210,7 @@ Das Folgende Bild zeigt das realisierte Layout der Komponenten in der ersten Gen
 Der sich im Zentrum befindende Mosfet wurde als VSSOP8 Gehäuse ausgeführt um Platz zu sparen. Zur linken befindet sich als größtes Bauteil die Schottky Diode am Eingang mit dem Dämpfungskondensator darunter. Unmittelbar darüber ist der Dämpfungskondesnator für den Ausgang angeordnet. Auf der Rechten Hälfte der Platine befindet sich als größtes Bauteil die Überspannungs Schutzdiode. Unmittelbar darunter der LM5050-1 im SOT23-6 Gehäuse.
 Grundsätzlich Fließt der Strom regulär von unten im Bild nach oben.
 Der Anschluss an die darunterliegende Platine in SMD Technik erfolgt über ein IN und ein OUT Pad links auf der Unterseite und ein GND Pad auf der Rechten Unterseite.
-Der Strompfad ist mit je 12 Vias zwischen Unter und Oberseite Verbunden. Diese dienen auch zum Abtransport der Wärme in das Darunterliegende PCB.
+Der Strompfad ist mit je 12 Vias zwischen Unter und Oberseite Verbunden\,\footnote{\cite[vgl.][Seite~24f.]{PCBStandard}}. Diese dienen auch zum Abtransport der Wärme in das Darunterliegende PCB.
 Damit ergab sich in der Montage ein kompaktes Baumaß von 16 x 12 mm für die Platine mit all ihren Bauelementen.
 
 \begin{figure}[H]
@@ -217,7 +223,7 @@ Damit ergab sich in der Montage ein kompaktes Baumaß von 16 x 12 mm für die Pl
 \subsubsection{Optimierung der Idealen Diode}
 
 Nach den Messungen zur Verlustleistung an der idealen Diode erster Generation wurde die Abhängigkeit von Kühlung und Innenwiderstand des Mosfets quantifiziert. 
-Die Kühlleistung hängt größtenteils unbeinflussbar von Aufbau und Größe der unter dem Ideale Dioden PCB liegenden Hauptplatine ab.
+Die Kühlleistung hängt größtenteils unbeinflussbar \cite{IEEE_Thermal_conductivity} von Aufbau und Größe der unter dem Ideale Dioden PCB liegenden Hauptplatine ab.
 
 Damit verbleibt der Innenwiederstand des verwendeten Mosfets als größtes Optimierungspotential.
 
@@ -239,7 +245,7 @@ Das layout der Platine wurde nur geringfügig verändert. Das LM5050 Bauteil wur
 Der Einsatz von sogenannten Plated Vias also aufgefüllten Durchkontaktierungen ermöglicht es hier auch erstmals Bauteile auf Durchkontaktierungen zu Positionieren.
 Beiden Dioden sind in der linken Hälfte der Platine konzentriert.
 
-Um die Thermische Anbindung an die Hauptplatine zu verbessern wurde die Anzahl der Vias auf 20 erhöht und deren Position direkt unter die Löt Pads des Mosfet verlegt. Damit ist der Übergangswiederstand zur Hauptplatine minimiert.
+Um die Thermische Anbindung an die Hauptplatine zu verbessern wurde die Anzahl der Vias auf 20 erhöht und deren Position direkt unter die Löt Pads des Mosfet verlegt. Damit ist der Übergangswiederstand \cite{Heat_Transfer}zur Hauptplatine minimiert.
 
 Damit ist eine Reduzierung der Abmaße des PCBs auf 14 x 12 mm möglich geworden.Die Leistung im Thermischen und damit Elektrischen Bereich konnte nochmals verbessert werden. Mit dem neuen Mosfet sind durch seinen geringen Innenwiederstand deutlich größere Nennströme möglich.
 
@@ -263,56 +269,84 @@ Damit ist eine Reduzierung der Abmaße des PCBs auf 14 x 12 mm möglich geworden
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Dioden_Paar_dreiviertel.jpg} 
+\adjincludegraphics[trim={17cm 15cm 16cm 15cm},width=0.9\textwidth,clip]{bilder/Ideale_Diode/Ideale_Dioden_Paar_dreiviertel.jpg}
+%\includegraphics[width=0.9\textwidth]{bilder/Ideale_Diode/Ideale_Dioden_Paar_dreiviertel.jpg} 
 \caption{Beide Generationen des Ideale Dioden Moduls nebeneinander} 
 \label{fig:Beide Generationen des Ideale Dioden Moduls nebeneinander}
 \end{figure}
 
 \section{Integration von Zukaufbaugruppen}
 
-Um den Aufwand für die Stromversorgung zu reduzieren....
-LM2596S  Baugruppe Dc-Dc 
-Vin 4 - 35 V 
+Für einige Stromversorgungsaufgaben wurden fertige Spannungswandler Baugruppen zugekauft. Die Für die Erzeugung von beispielsweise 5V aus den 14,5 V Batteriespannung in Moderater Qualität stehen ein Vielzahl von fertigen PCBs zu sehr niedrigen Preisen zur Auswahl. 
+Diese haben sich bereits in anderen Verwendungen bewährt und können von einer Vielzahl an Zwischenhändlern bezogen werden. Der Preis für ein solches Modul liegt in der Regel im Bereich weniger Euro. Damit sind sowohl der nötige Entwicklungsaufwand als auch die Kosten für Platinen und Bauteile zur Erstellung einer Laboreigenen Lösung mit vergleichbarer Zuverlässigkeit deutlich höher. Da keine speziellen Anforderungen an die Module bestehen wurde die Entscheidung getroffen diese immer zuzukaufen und in das restliche Elektroniksystem zu integrieren.
 
-Vout 1,23 - 30 V einstellbar
+Bei einem der beiden Module handelt es sich um ein PCB mit LM2596 IC . 
+Die Ausgangsspannung wird über einen mit Spindelpotentiometer einstellbaren Spannungsteiler vor dem Einbau auf die gewünschten 5\,V justiert.
+Mit dem Modul sind folgende Werte Möglich:
 
-3 A  mit Kühlung
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+IC    & LM2596    &   \\ \hline
+$V_{in}$  & 4,75 $-$ 23 & V \\ \hline
+$V_{out}$ & 1,0 $-$ 17  & V \\ \hline
+$I_{out}$ & 3         & A \\ \hline
+\end{tabular}
+\caption{Mögliche werte des LM2596 Moduls}
+\label{Mögliche werte des LM2596 Moduls}
+\end{table}
 
-meist auf 5V  eingestellt 
-Meist 5V Versorgung für Servos
+Aufgrund des möglichen erhöhten Dauerstroms von 3\,A wird dieses Modul bei den bisherigen Systemen für die Versorgung des 5V Servosystems verwendet.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_LM2596S.jpg} 
+\adjincludegraphics[trim={20cm 18cm 20cm 18cm},width=0.9\textwidth,clip]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_LM2596S.jpg}
+%\includegraphics[width=0.9\textwidth]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_LM2596S.jpg} 
 \caption{Zugekauftes Dc-Dc Wandler PCB mit LM2596} 
 \label{fig:Zugekauftes Dc-Dc Wandler PCB mit LM2596}
 \end{figure}
 
+Beider zweiten Baugruppe handelt es sich um das deutlich kleinere PCB DSN-360 Mini.
+Es wird ebenfalls mit einem Potentiometer auf die gewünschten 5\,V Ausgangsspannung eingestellt. Die höhere Schaltfrequenz dieses Dc-Dc Wandlers ermöglicht seine deutlich geringere Baugröße bei kurzzeitig ähnlicher Leistung wie das LM2596 Modul. Hier findet weitestgehend eine Begrenzung der Dauerleistung aufgrund der Wärmeabstrahlung statt.
+Die Baugruppe weist die folgenden Einstellmöglichkeiten auf:
 
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+IC    & DSN-360    &   \\ \hline
+$V_{in}$  & 4,75 $-$ 23 & V \\ \hline
+$V_{out}$ & 1,0 $-$ 17  & V \\ \hline
+$I_{out}$ & 3         & A \\ \hline
+\end{tabular}
+\caption{Mögliche werte des DSN-360 Mini Moduls}
+\label{Mögliche werte des DSN-360 Mini Moduls}
+\end{table}
 
-
-DSN Mini 360  Baugruppe Dc-Dc
-
-Vin 4,75 - 23 V
-
-Vout 1,0 - 17 V einstellbar
-
-Iout dauer  ~ 1,5 A
-
-Meist 5 V versorgung für Pixhawk und Lidar
+Dieses Modul wird in der Regel im Bereich bis 1,5\,A bei 5 \,V zur Versorgung von Pixhawk und LIDAR eingesetzt.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_Mini-360.jpg} 
+\adjincludegraphics[trim={30cm 22.5cm 30cm 22.5cm},width=0.9\textwidth,clip]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_Mini-360.jpg}
+%\includegraphics[width=0.9\textwidth]{bilder/Zukaufbauteile/Baugruppen_Dc-Dc_Mini-360.jpg} 
 \caption{Zugekauftes Dc-Dc Wandler PCB Mini-360} 
 \label{fig:Zugekauftes Dc-Dc Wandler PCB Mini-360}
 \end{figure}
 
 \section{Mechanische Integration im Flugsystem}
 
+Die Elektronikbaugruppen der Autopiloten-Platine und der Leistungsplatine werden zentral im Flugzeug integriert. Sie werden im Hinteren beziehungsweise Vorderen Bereich der WingCenterBox mit je vier Anschraubpunkten mit den Umgebenden 3D Druckteilen verbunden.
+Damit ist die Autopiloten-Platine für die Inbetriebnahme des Systems vor der Start gut erreichbar.
+
+Die Leistungs-Platine bedarf keiner unmittelbaren Interaktion. Lediglich die Steckverbindungen für Leistungs Ein- und Ausgang sowie die Versorgungsleitungen zur Autopiloten-Platine und eine Steuerleitung zum Motorcontroller sind leicht zuänglich positioniert.
+
+Die Verbindung mit der externen Bodenstromversorgung ist nur bei geöffneter Abdeckung möglich und verhindert ein Abschließen der Startvorbereitungen ohne Trennung dieser Leistungsverbindung.
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{bilder/Fotos/AUVSI_2016_Centerbox_Detail.jpg} 
+\adjincludegraphics[trim={29cm 1cm 30cm 5cm},width=0.9\textwidth,clip]{bilder/Fotos/AUVSI_2016_Centerbox_Detail.jpg}
+%\includegraphics[width=0.9\textwidth]{bilder/Fotos/AUVSI_2016_Centerbox_Detail.jpg} 
 \caption{In der WingCenterBox eingebaute Autopilotenplatine} 
 \label{fig:In der WingCenterBox eingebaute Autopilotenplatine}
 \end{figure}
