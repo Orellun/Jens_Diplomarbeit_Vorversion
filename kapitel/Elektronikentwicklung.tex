@@ -22,7 +22,27 @@ Auch die ersten versuche mit einem selbst gebauten Flächenmodell waren mit ähn
 Aus diesen Erfahrungen entstand das Eingangs vorgestellte Konzept für die Elektronik des Fliegers.
 Dieses Konzept wurde 2015 erstmals angewandt, um eine Übersichtliche und einfach handhabbare Hardwareplattform mit leicht überprüfbaren Funktionen Umzusetzen.
 
+Im Folgenden wird Beispielhaft die Bordelektronik des AUVSI 2016 Fliegers betrachtet.
+
 \subsection{Leistungsplatine}
+
+Die Leistungsplatine kann grundlegend in drei Funktionsgruppen aufgeteilt werden.
+Eine Stromrichtungskontrolle in Form der Idealen Dioden Schaltung.
+Die Wandlung und Verteilung der Spannungsversorgung für Servos, Sensoren und Autopilotenhardware.
+Und eine Priorisierungsschaltung zwischen einem Externen Pfad und der Stromschiene aus dem Zusammenschluss der Idealen Dioden Ausgänge.
+
+Die Idealen Dioden agieren nach dem selben Funktionsprinzip der Idealen Dioden als Modul, auf deren Details in einem späteren Kapitel eingegangen wird. Sie sind an dieser Stelle mit dem IC LTC4352 der Firma Linear Technologys ausgeführt.
+
+Die Spannungsversorgung wird Konzeptgemäß für drei 5\,V Schienen mit Dc-Dc Wandlung aus dem bis zu 17 V Batteriespannung ausgeführt.
+Konkret werden zwei Module DSN-360 Mini und ein Modul LM2596 eingesetzt.
+Diese Versorgen die Telemetriemodule und LIDAR, die Pixhawk Hardware und die Servo Versorgung.
+Die Versorgung der Dc-Dc Module wir an ihrem Eingang mit einem 470\,$\mu$F 25\,V  Elektrolythkondensator gepuffert.
+
+Alle ein und Ausgänge der Module sind mit Selbstrückstellenden Sicherungen der PTC Technologie ausgestattet.
+
+Die Prioritätsschaltung zwischen dem Anschluss den Bodenstromversorgung und dem eigentlich Flugakku wird von einem IC vom Typ LTC4236 gesteuert. Dieser aktuiert drei N-Kanal Mosfets. Einmal in sogenannter 'Back to Back' Konfiguration für den Flugakku Strang und einmal in klassischem Aufbau von Drain nach Source für den Externen Versorger.
+Über einen Spannungsteiler detektiert der IC die Präsenz eines Externen Akkus mit einer Spannung größer 14\,V und schaltet daraufhin die Mosfets der Flugenergieversorgung nichtleitend und der externe Mosfet wird auf das Bordsystem durchgeschaltet.
+Entsprechend wird bei einem Abfall der Spannung am Externen Anschluss unter 12\,V beziehungsweise einem Entfernen dieses Akkus wird der Strompfad wieder auf die erste Energieversorgung umgeschaltet.
 
 \subsubsection{Schaltplan}
 
@@ -87,7 +107,6 @@ Diese werden von den meisten Zukaufbaugruppen der Pixhawk Systems verwendet und 
 Sie sind für Ströme von 60 Ampere und Spannungen von 120 V freigegeben.
 Jedoch waren diese Steckverbinder nur zur Lötmontage vorgesehen. Es wurde die Erfahrung gemacht das die Verbindungen zur Kabelseite immer wieder versagten. Teils wegen Qualitativ ungenügender Lötstellen, teils wegen Brüchen durch Handhabung mit Bewegung des Kabels am Übergang von der Lötstelle zum Kupferkabel am Steifigkeitssprung.
 
-
 \begin{figure}[H]
 \centering
 \adjincludegraphics[trim={20cm 8cm 16cm 5cm},width=0.9\textwidth,clip]{bilder/Stecker/Stecker_XT60.jpg}
@@ -108,7 +127,6 @@ Außer einer klaren Standardisierung der Polung wurde bisher noch keine Konzept 
 \caption{Neuer Verbinder  Powerpol 45} 
 \label{fig:Neuer Verbinder  Powerpol 45}
 \end{figure}
-
 
 Beide Systeme verwenden das Prinzip des Kraftschlusses für die Fixierung der Steckverbindung. Die für Montage und Demontage nötigen Kräfte sind jedoch an beengten Stellen im Flieger immer wieder hinderlich bei der Handhabung. Deshalb wird eine Formschlussbasierte Fixierung ähnlich den Signal Steckverbindern erwogen.
 
