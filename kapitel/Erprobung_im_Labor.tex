@@ -24,6 +24,37 @@ Die Platine misst 1x1 Zoll mit 35 um Kupferstärke und regulärem Lötstopplack.
 Die vergleichende Messung der beiden Generationen und verschiedener Mosfet-Bestückungen zeigt die unterschiedlichen equivalenten Widerstände über den durchgeleiteten Strom.
 Dieser Strom ist unmittelbar nach den Ohmschen Gesetzen für die örtliche Verlustleistung und damit für die Erwärmung der Baugruppe verantwortlich.
 
+
+\begin{comment}
+
+
+\begin{figure}[H]
+\begin{tikzpicture}
+ \begin{axis}[
+ 	ymin=0,
+    xmin=0,
+ 	width=\textwidth,height=0.5\textheight,
+  	%title=Einfahrzyklus Wegprofil,
+    xlabel={Testsrom [A]},
+    ylabel={R-res [mOhm]},
+    grid=major,
+    legend entries={Ideale Diode Mini,Ideale Diode Mini mod.,},
+    enlarge x limits=0.01,
+]
+ 	\addplot+[mark=*] table[x=Teststrom1, y=Ideale_Diode_Mini1]  {graphen/Testdaten_Ideale_Dioden-Vergleich.txt};
+ 	%\addplot+[mark=x] table[x=Teststrom2, y=Ideale_Diode_Mini2]  {graphen/Testdaten_Ideale_Dioden-Vergleich.txt};
+
+ \end{axis}
+\end{tikzpicture}
+\caption{Einfahrzyklus Wegprofil (für jeden Zyklus ist ein Hub dargestellt)}
+\label{Einfahrzyklus_Wegprofil}
+\end{figure}
+
+
+\end{comment}
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{graphen/Wiederstand-Strom-Ideale_Diode_ver00} 

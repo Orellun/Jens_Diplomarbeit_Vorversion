@@ -83,20 +83,30 @@ Am Rechten Rand zur Autopilotenplatine hin befindet sich ein \textit{Lumberg MSF
 
 \subsection{Autopilotenplatine}
 
-Die Autopilotenplatine übernimmt quasi ausschließlich
+Die Autopilotenplatine übernimmt quasi ausschließlich Aufgaben der Verteilung und Verbindung von Signalpfaden. Logiksysteme oder ICs sind auf ihr nicht vorhanden. Von der Leistungsplatine wird die Stromversorgung der 5\,V Schiene aufgeteilt und in beide Flügelanschlüsse und den Heckanschluss zur Versorgung der Servos und der Antennensysteme aufgefächert. Der \textit{Pixhawk} wird ebenfalls mit einem 5\,V Anschluss belegt. 
+Von den Ausgängen des \textit{Pixhawk} werden die Steuersignale im PWM Format zu den selben Anschlüssen wie die 5\,V Schienen geführt und entsprechend zu den Servos geführt.
+Es besteht ebenfalls eine Verbindung mit Signalen und Stromversorgung zwischen der Autopilotenplatine und dem Nutzlastrumpf. Hier werden Steuersignale für Beipielsweise den Aktor für den Abwurf des \textit{Augaben-Ei} geführt und eine 5\,V Schiene für die Rechensysteme und weitere $\mu c $ in der Nutzlast.
+
+Grundsätzlich werden alle Signalverbindungen außer den Servosignalen von und zum Autopiloten zunächst von seinen \textit{DF13} Verbindern auf die Platine Geführt.Von dort aus werden diese dann über andere Verbinder der Reihe \textit{Lumberg MSF} oder \textit{JST PA} weiterverteilt. Damit wird eine häufigere Aktuierung der \textit{DF13} Stecker vermieden die sich als sehr Schadensanfällig bei häufigerem Gebrauch erwiesen haben.
+
+Es befinden sich noch zwei Spannungsteiler auf dieser Platine. Diese Teilen einerseits die Akkupspannung auf ein auf 3,3\,V skaliertes Logiksignal herunter. Auch das auf 5\,V basierende Strommesssignal wird entsprechend herunterskaliert.
 
 \subsubsection{Schaltplan}
 
-\newpage
+Die Abbildung \ref{fig:Schaltplan der Autopilotenplatine} im Querformat zeigt den Schematischen Aufbau der Signalflüsse zwischen Stromversorgung Sensoren, Nutzlast, dem Autopiloten und den Aktoren.
+
+%\newpage
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.25\textwidth,angle =90]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI16} 
+\includegraphics[width=1.4\textwidth,angle =90]{bilder/Centerbox/Centerbox-Rear-Pixhawk_AUVSI16} 
 \caption{Schaltplan der Autopilotenplatine} 
 \label{fig:Schaltplan der Autopilotenplatine}
 \end{figure}
 
 \subsubsection{Platinenlayout}
+
+
 
 \begin{figure}[H]
 \centering
