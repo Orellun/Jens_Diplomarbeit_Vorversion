@@ -70,7 +70,7 @@ Einbau einer Abwurfvorrichtung für das jeweilige Nutzlastobjekt (2015-Ei, 2016-
 In dieser Arbeit soll keine detaillierte Betrachtung der aerodynamischen und mechanischen Entwicklungsresultate für das eigentliche Fluggerät stattfinden. Es wird festgehalten, dass alle bisher eingesetzten Flugzeuge die oben definierten Anforderungen erfüllen und Spannweiten zwischen 1,5 m und 2,8 m aufweisen. Des Weiteren wurden Abfluggewichte von 4 bis 4,9 kg eingesetzt.
 
 
-\section{(Ggf. Zusammenlegung mit folgendem Kapitel) Aufgaben der Elektronik}
+\section{Aufgaben der Elektronik}
 
 Die Aufgaben der Elektronik lassen sich in den Bereich der Energieverwaltung und -verteilung  und den Bereich der Signalverteilung separieren.
 
@@ -93,7 +93,7 @@ Aufgrund vorangegangener Tests wurde das Flugsystem für eine ausschließlich ba
     
     \item \textbf{Drittgrößter Verbraucher} an Bord sind die Funksysteme im 5 Ghz und 433 Mhz Band, welche einer Festspannungsversorung mit 12 V  bedürfen.
 
-    \item \textbf{Sonstige Verbraucher} wie die Sensorsysteme, die Kamera und der Bordcomputer müssen ebenfalls berücksichtigt werden. Dies benötigen eine feste Versorgungsspannung von 5,0 V hoher Qualität. Als kleinster Verbraucher benötigen der Autopiloten-Computer und seine Sensorsysteme eine Versorgungsspannung mit hoher Genauigkeit und geringer Varianz mit 5,0 V. Aus dieser werden innerhalb der Autopiloten-Hardware eigenständig  \colorbox{red}{?selbstständig?} 3,3 V erzeugt.
+    \item \textbf{Sonstige Verbraucher} wie die Sensorsysteme, die Kamera und der Bordcomputer müssen ebenfalls berücksichtigt werden. Dies benötigen eine feste Versorgungsspannung von 5,0 V hoher Qualität. Als kleinster Verbraucher benötigen der Autopiloten-Computer und seine Sensorsysteme eine Versorgungsspannung mit hoher Genauigkeit und geringer Varianz mit 5,0 V. Aus dieser werden innerhalb der Autopiloten-Hardware 3,3 V erzeugt.
 \end{enumerate}
 
 Insgesamt sollen alle Subsysteme im Fehlerfall einen möglichst regulären Weiterbetrieb der restlichen Systemteilnehmer gewährleisten. Höchste Priorität muss dabei der Aufrechterhaltung der Funktionen des Autopilotensystems eingeräumt werden.
@@ -137,7 +137,7 @@ Die Ausgänge des Autopilotencomputers werden nicht speziell geschützt. Hier wi
 \end{comment}
 
 
-\section{(Verwirrend - Weitere Anforderungen Elektronik) Umsetzung in der Elektronik}
+\section{Anforderungen an die Umsetzung der Elektronik}
 
 \subsection{Kabel und Steckersystem}
 
@@ -204,7 +204,7 @@ Dieses System wird aufgrund seiner Funktionsweise als "ideale Diode" bezeichnet.
 \subsection{Bereitstellung der Versorgungspannungen}
 
 Die Erzeugung der erforderlichen Versorgungsspannungen für alle Subsysteme erfolgt über den Einbau von Gleichstrom-Gleichstrom Wechselrichtern (DC-DC Wandler).
-Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  Wandlung aus der Spannung des Batteriesystems. \colorbox{red}{ENDE MAXI}
+Diese erzeugen die nötigen Spannungen durch sogenannte "Step down"  Wandlung aus der Spannung des Batteriesystems.
 Linearregler erzeugen die Spannung für die empfindliche Systeme wie Autopiloten und die Sensoren.Diese gewährleisten eine hohe Genauigkeit, eine geringe Varianz und niedrige Restwelligkeit des Wertes der Ausgangsspannung.
 
 Um im Fehlerfall eines Subsystems durch zum Beispiel Kurzschluss eine Beschädigung des Spannungsversorgungssystems durch Überstrom und den daraus resultierenden Ausfall der Systemgruppe zu vermeiden, wird jeder Verbraucher mit einer selbstrückstellenden Sicherung mit einem Nennstrom in der Größenordnung von 125 Prozent seines Datenstroms ausgestattet.
